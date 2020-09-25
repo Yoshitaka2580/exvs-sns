@@ -1,0 +1,55 @@
+<header class="navbar navbar-expand navbar-dark">
+  <a class="navbar-brand" href="/posts"><i class="fas fa-gamepad"></i>MAXBOOSTON MATCHING</a>
+  <div class="col-sm-4"></div>
+  <ul class="navbar-nav">
+    @guest
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('register') }}">新規登録</a>
+    </li>
+    @endguest
+
+    @guest
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+    </li>
+    @endguest
+
+    @auth
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('posts.create') }}"><i class="fas fa-pen-alt"></i>募集する</a>
+    </li>
+    @endauth
+
+    @auth
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      @if(!empty(Auth::user()->thumbnail))
+        <img src="/storage/user/{{ Auth::user()->thumbnail }}" class="editThumbnail">
+      @else
+        <i class="fas fa-user-circle user-circle"></i>
+      @endif
+    </a>
+    <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+      <button class="dropdown-item" type="button"
+              onclick="location.href='{{ route('users.show', ['name' => Auth::user()->name]) }}'">
+        マイページ
+      </button>
+      <div class="dropdown-divider"></div>
+      <button form="logout-button" class="dropdown-item" type="submit">
+        ログアウト
+      </button>
+      <div class="dropdown-divider"></div>
+      <button onclick="location.href='http://spread-exvsmbon.com/'" class="dropdown-item">
+        マキシブーストオン攻略サイトはこちらへ
+      </button>
+    </div>
+  </li>
+  <form id="logout-button" method="POST" action="{{ route('logout') }}">
+    @csrf
+  </form>
+  <!-- Dropdown -->
+  @endauth
+  </ul>
+</header>
