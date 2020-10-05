@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index(Post $post)
     {
         $posts = $post->all()->sortByDesc('created_at')
-                ->load(['user', 'likes', 'tags','comments']);
+                ->load(['user', 'likes', 'tags']);
         
         return view('posts.index', compact('posts'));
     }
@@ -101,7 +101,6 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-        dd($post);
         $post->delete();
         
         return redirect()->to('/posts');
