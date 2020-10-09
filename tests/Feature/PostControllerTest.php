@@ -7,7 +7,6 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\User;
 
-
 class PostControllerTest extends TestCase
 {
     use RefreshDatabase;

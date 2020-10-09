@@ -2,6 +2,6 @@
 
 set -eux
 
-cd ~/exvs_sns
+cd ~/exvs-sns
 php artisan migrate --force
 php artisan config:cache

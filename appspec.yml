@@ -2,10 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/webapp/exvs_sns
+    destination: /home/webapp/exvs-sns
 
 permissions:
-  - object: /home/webapp/exvs_sns
+  - object: /home/webapp/exvs-sns
     owner: webapp
     group: webapp
 
