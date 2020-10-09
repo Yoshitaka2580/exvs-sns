@@ -78,11 +78,11 @@ jobs:
       - run: npm run prod
       - run:
           name: archive artifacts
-          command: zip -ryq exvs_sns.zip .
+          command: zip -ryq exvs-sns.zip .
       - aws-cli/install
       - run:
           name: upload artifacts to s3
-          command: aws s3 cp exvs_sns.zip s3://${AWS_S3_BUCKET_NAME}
+          command: aws s3 cp exvs-sns.zip s3://${AWS_S3_BUCKET_NAME}
       - run:
           name: deploy to prod
           command: |
