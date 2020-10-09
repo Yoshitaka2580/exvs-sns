@@ -89,7 +89,7 @@ jobs:
             aws deploy create-deployment \
             --application-name exvs-sns \
             --deployment-group-name exvs-sns \
-            --s3-location bucket=${AWS_S3_BUCKET_NAME},key=exvs_sns.zip,bundleType=zip
+            --s3-location bucket=${AWS_S3_BUCKET_NAME},key=exvs-sns.zip,bundleType=zip
 
 orbs:
   aws-cli: circleci/aws-cli@1.0.0
