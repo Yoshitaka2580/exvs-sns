@@ -31,15 +31,15 @@ return [
     ],
 
     'google' => [
-        'client_id' => 'GOOGLE_CLIENT_ID',
-        'client_secret' => 'GOOGLE_CLIENT_SECRET',
-        'redirect' => 'APP_URL' . '/login/google/callback',
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . '/login/google/callback',
     ],
 
     'facebook' => [
         'client_id'     => env('FACEBOOK_APP_ID'),
         'client_secret' => env('FACEBOOK_APP_SECRET'),
-        'redirect'      => env('FACEBOOK_CALLBACK_URL')
+        'redirect'      => env('APP_URL') . '/login/facebook/callback',
     ],
 
 ];
