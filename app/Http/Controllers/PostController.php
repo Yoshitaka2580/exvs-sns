@@ -20,8 +20,8 @@ class PostController extends Controller
 
     public function index(Post $post)
     {
-        $posts = $post->all()->sortByDesc('created_at')
-                ->load(['user', 'likes', 'tags']);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts->load(['user', 'likes', 'tags', 'comments']);
         
         return view('posts.index', compact('posts'));
     }
