@@ -16,5 +16,9 @@
     @include('posts.index_card')
     @endforeach
   </div>
+
+  <div class="d-flex justify-content-center mt-4 pg-red">
+    {{ $posts->links() }}
+  </div>
 </div>
 @endsection
