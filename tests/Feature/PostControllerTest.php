@@ -11,6 +11,14 @@ class PostControllerTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function testIndex()
+    {
+        $response = $this->get(route('posts.index'));
+
+        $response->assertStatus(200)
+            ->assertViewIs('posts.index');
+    }
+
     public function testGuestCreate()
     {
         $response = $this->get(route('posts.create'));
