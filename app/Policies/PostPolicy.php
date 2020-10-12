@@ -16,7 +16,7 @@ class PostPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function viewAny(User $user)
+    public function viewAny(?User $user)
     {
         return true;
     }
