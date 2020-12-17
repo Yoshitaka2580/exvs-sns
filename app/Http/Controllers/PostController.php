@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Tag;
 use App\Comment;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 
@@ -34,11 +35,17 @@ class PostController extends Controller
 
     public function create()
     {
+        $category  = new Category;
+        $categories = $category->getLists()->prepend('選択', '');
+
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
 
-        return view('posts.create', compact('allTagNames'));
+        return view('posts.create', [
+            'allTagNames' => $allTagNames,
+            'categories' => $categories,
+        ]);
     }
 
     public function search(Request $request)
@@ -75,6 +82,9 @@ class PostController extends Controller
             return ['text' => $tag->name];
         });
 
+        $category = new Category;
+        $categories = $category->getLists();
+
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
@@ -83,6 +93,7 @@ class PostController extends Controller
             'post' => $post,
             'tagNames' => $tagNames,
             'allTagNames' => $allTagNames,
+            'categories' => $categories,
         ]);
     }
 

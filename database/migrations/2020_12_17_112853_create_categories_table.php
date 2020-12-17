@@ -17,7 +17,6 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('is_deleted', 4)->default('0');
         });
     }
 
