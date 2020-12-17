@@ -48,4 +48,10 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment');
     }
+
+    // //投稿は一つのカテゴリーに属する
+    // public function category(): BelongsTo
+    // {
+    //     return $this->belongsTo('App\Category');
+    // }
 }
