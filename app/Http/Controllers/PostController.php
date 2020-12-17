@@ -22,8 +22,8 @@ class PostController extends Controller
     public function index(Post $post)
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
-        $posts->load(['user', 'likes', 'tags', 'comments']);
-        
+        $posts->load(['user', 'likes', 'tags', 'comments', 'category']);
+
         return view('posts.index', compact('posts'));
     }
 
@@ -36,7 +36,7 @@ class PostController extends Controller
     public function create()
     {
         $category  = new Category;
-        $categories = $category->getLists()->prepend('選択', '');
+        $categories = $category->getLists()->prepend('機体コスト', '');
 
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
@@ -62,7 +62,6 @@ class PostController extends Controller
 
     public function store(PostRequest $request, Post $post)
     {
-
         $input = $request->all();
         $post->fill($input);
         $post->user_id = $request->user()->id;

@@ -9,7 +9,7 @@ class Category extends Model
 {
     public function posts() :HasMany
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany('App\Post')->withTimestamps();
     }
 
     public function getLists()
