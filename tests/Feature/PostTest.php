@@ -12,14 +12,14 @@ class PostTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testIsLikedByNull()
-    {
-        $post = factory(Post::class)->create();
+    // public function testIsLikedByNull()
+    // {
+    //     $post = factory(Post::class)->create();
 
-        $result = $post->isLikedBy(null);
+    //     $result = $post->isLikedBy(null);
 
-        $this->assertFalse($result);
-    }
+    //     $this->assertFalse($result);
+    // }
 
     public function testIsLikedByTheUser()
     {

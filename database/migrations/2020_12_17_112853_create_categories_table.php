@@ -18,8 +18,6 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name');
-            $table->bigInteger('post_id');
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
 
         DB::table('categories')->insert([
