@@ -26,18 +26,16 @@ class PostController extends Controller
 
         $category_id = $request->category_id;
 
-        if (!is_null($category_id)) {
-            $posts = Post::where('category_id', $category_id)->orderBy('created_at', 'desc')->paginate(5);
-        } else {
-            $posts = Post::orderBy('created_at', 'desc')->paginate(5);
-        }
+        $posts = Post::orderBy('created_at', 'desc')
+                ->categoryAt($category_id)
+                ->paginate(5);
 
         $posts->load(['user', 'likes', 'tags', 'comments', 'category']);
 
         return view('posts.index', [
             'posts' => $posts, 
-        'categories' => $categories, 
-        'category_id'=>$category_id,
+            'categories' => $categories, 
+            'category_id'=>$category_id,
         ]);
     }
 
@@ -50,7 +48,7 @@ class PostController extends Controller
     public function create()
     {
         $category  = new Category;
-        $categories = $category->getLists()->prepend('機体コスト', '');
+        $categories = $category->getLists()->prepend('機体コストを選択してください', '');
 
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
@@ -96,7 +94,7 @@ class PostController extends Controller
         });
 
         $category = new Category;
-        $categories = $category->getLists();
+        $categories = $category->getLists()->prepend('機体コストを選択してください', '');
 
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];

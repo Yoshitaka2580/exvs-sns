@@ -7,7 +7,6 @@
 <div class="alert alert-success">{{ session('success') }}</div>
 @endif
 @include('nav')
-@include('nav_tags')
 <div class="container">
   @include('users.user')
   @include('users.tabs', ['hasPosts' => true, 'hasLikes' => false])
