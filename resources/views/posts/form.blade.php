@@ -15,9 +15,14 @@
     class="form-control"
     value="{{ old('category_id') }}"
   >
+  @if($categories)
     @foreach($categories as $id => $name)
-        <option value="{{ $id }}">{{ $name }}</option>
+      <option value="{{ $id }}">{{ $name }}</option>
     @endforeach
+  @else
+    <option value="1">3000</option>
+    <option value="2">2500</option>
+    <option value="3">2000</option>
   </select>}
 
 </div>
