@@ -13,6 +13,7 @@ class Post extends Model
     protected $fillable = [
         'title',
         'body',
+        'category_id',
     ];
     
     public function user(): BelongsTo 
@@ -47,5 +48,11 @@ class Post extends Model
     public function comments(): HasMany
     {
         return $this->hasMany('App\Comment');
+    }
+
+    //投稿は一つのカテゴリーに属する
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo('App\Category');
     }
 }

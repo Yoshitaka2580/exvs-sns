@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Tag;
 use App\Comment;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 
@@ -21,8 +22,8 @@ class PostController extends Controller
     public function index(Post $post)
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
-        $posts->load(['user', 'likes', 'tags', 'comments']);
-        
+        $posts->load(['user', 'likes', 'tags', 'comments', 'category']);
+
         return view('posts.index', compact('posts'));
     }
 
@@ -34,11 +35,17 @@ class PostController extends Controller
 
     public function create()
     {
+        $category  = new Category;
+        $categories = $category->getLists()->prepend('機体コスト', '');
+
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
 
-        return view('posts.create', compact('allTagNames'));
+        return view('posts.create', [
+            'allTagNames' => $allTagNames,
+            'categories' => $categories,
+        ]);
     }
 
     public function search(Request $request)
@@ -55,7 +62,6 @@ class PostController extends Controller
 
     public function store(PostRequest $request, Post $post)
     {
-
         $input = $request->all();
         $post->fill($input);
         $post->user_id = $request->user()->id;
@@ -75,6 +81,9 @@ class PostController extends Controller
             return ['text' => $tag->name];
         });
 
+        $category = new Category;
+        $categories = $category->getLists();
+
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
@@ -83,6 +92,7 @@ class PostController extends Controller
             'post' => $post,
             'tagNames' => $tagNames,
             'allTagNames' => $allTagNames,
+            'categories' => $categories,
         ]);
     }
 
