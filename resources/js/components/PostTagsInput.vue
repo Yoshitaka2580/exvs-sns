@@ -8,7 +8,7 @@
     <vue-tags-input
       v-model="tag"
       :tags="tags"
-      placeholder="自分の機体・コスト"
+      placeholder="タグ"
       :autocomplete-items="filteredItems"
       :add-on-key="[13, 32]"
       @tags-changed="newTags => tags = newTags"

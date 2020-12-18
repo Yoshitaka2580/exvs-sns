@@ -59,6 +59,14 @@
     @endif
   </div>
 
+  <div class="card-body tag-body">
+    <div class="tag-text">
+      <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="btn-backred tag-hashtag">
+        {{ $post->category->name }}
+      </a>
+    </div>
+  </div>
+  
   @foreach($post->tags as $tag)
     @if($loop->first)
     <div class="card-body tag-body">

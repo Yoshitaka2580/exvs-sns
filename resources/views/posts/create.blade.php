@@ -4,7 +4,6 @@
 
 @section('content')
 @include('nav')
-@include('nav_tags')
 <div class="card-wrapper">
   <div class="container">
     <div class="card card-create">

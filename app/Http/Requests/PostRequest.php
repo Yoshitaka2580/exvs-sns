@@ -27,6 +27,7 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required|max:20',
             'body' => 'required|max:200',
+            'category_id' => 'required',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
             
         ];

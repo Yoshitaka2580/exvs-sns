@@ -4,7 +4,6 @@
 
 @section('content')
 @include('nav')
-@include('nav_tags')
 <div class="container">
   <div class="card">
     <h2 class="card-title-tag">{{ $tag->hashtag }}</h2>

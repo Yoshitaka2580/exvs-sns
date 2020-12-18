@@ -4,7 +4,6 @@
 
 @section('content')
   @include('nav')
-  @include('nav_tags')
   <div class="container">
     @include('posts.card')
     @include('posts.comment')
