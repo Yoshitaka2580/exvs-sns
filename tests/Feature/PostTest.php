@@ -21,26 +21,26 @@ class PostTest extends TestCase
     //     $this->assertFalse($result);
     // }
 
-    public function testIsLikedByTheUser()
-    {
-        $post = factory(Post::class)->create();
-        $user = factory(User::class)->create();
-        $post->likes()->attach($user);
+    // public function testIsLikedByTheUser()
+    // {
+    //     $post = factory(Post::class)->create();
+    //     $user = factory(User::class)->create();
+    //     $post->likes()->attach($user);
 
-        $result = $post->isLikedBy($user);
+    //     $result = $post->isLikedBy($user);
 
-        $this->assertTrue($result);
-    }
+    //     $this->assertTrue($result);
+    // }
 
-    public function testIsLikedByAnother()
-    {
-        $post = factory(Post::class)->create();
-        $user = factory(User::class)->create();
-        $another = factory(User::class)->create();
-        $post->likes()->attach($another);
+    // public function testIsLikedByAnother()
+    // {
+    //     $post = factory(Post::class)->create();
+    //     $user = factory(User::class)->create();
+    //     $another = factory(User::class)->create();
+    //     $post->likes()->attach($another);
 
-        $result = $post->isLikedBy($user);
+    //     $result = $post->isLikedBy($user);
 
-        $this->assertFalse($result);
-    }
+    //     $this->assertFalse($result);
+    // }
 }
