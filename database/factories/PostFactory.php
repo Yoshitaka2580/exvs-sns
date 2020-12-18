@@ -13,5 +13,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'user_id' => function() {
             return factory(User::class);
         },
+        'category_id' => $faker->numberBetween(1,4), 
     ];
 });
