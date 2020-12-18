@@ -19,12 +19,26 @@ class PostController extends Controller
         $this->authorizeResource(Post::class, 'post');
     }
 
-    public function index(Post $post)
+    public function index(Request $request)
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $category = new Category;
+        $categories = $category->getLists();
+
+        $category_id = $request->category_id;
+
+        if (!is_null($category_id)) {
+            $posts = Post::where('category_id', $category_id)->orderBy('created_at', 'desc')->paginate(5);
+        } else {
+            $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        }
+
         $posts->load(['user', 'likes', 'tags', 'comments', 'category']);
 
-        return view('posts.index', compact('posts'));
+        return view('posts.index', [
+            'posts' => $posts, 
+        'categories' => $categories, 
+        'category_id'=>$category_id,
+        ]);
     }
 
     public function show(Post $post)
