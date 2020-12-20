@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 Route::prefix('login')->name('login.')->group(function () {
+  Route::get('/guest', 'Auth\LoginController@guestLogin')->name('guest');
   Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('{provider}');
   Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('{provider}.callback');
 });

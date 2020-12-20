@@ -8,7 +8,7 @@
     <vue-tags-input
       v-model="tag"
       :tags="tags"
-      placeholder="タグ"
+      placeholder="タグ３つまで登録できます"
       :autocomplete-items="filteredItems"
       :add-on-key="[13, 32]"
       @tags-changed="newTags => tags = newTags"
