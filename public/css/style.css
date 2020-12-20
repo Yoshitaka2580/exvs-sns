@@ -42,13 +42,27 @@ a:hover {
 }
 
 .navbar-brand {
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.navbar-nav {
   margin-left: auto;
+}
+
+.nav-item {
+  margin: auto;
+}
+
+.nav-item:nth-child(2) {
+  margin-left: 10px;
 }
 
 .fa-gamepad{
   padding-right: 10px;
-  
+}
+
+.dropdown-toggle {
+  color: #fff;
 }
 
 .user-circle{
@@ -335,8 +349,8 @@ textarea {
 }
 
 .editThumbnail {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   object-fit: cover;
   border-radius: 50%;
 }
