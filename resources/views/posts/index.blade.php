@@ -13,7 +13,7 @@
         <span class="btn"><a href="{{ route('posts.index', ['category_id'=>$id]) }}" title="{{ $name }}">{{ $name }}</a></span>
         @endforeach
         <form action="/search" method="get" class="input-group md-form form-sm form-2 pl-0">
-          <input type="search" name="search" required class="form-control my-0 py-1 red-border" placeholder="タグを検索">
+          <input type="search" name="search" required class="form-control my-0 py-1 red-border" placeholder="タグを検索" style="color: #fff;">
           <button type="submit" class="input-group-text red lighten-3"><i class="fas fa-search text-grey"></i></button>
         </form>
       </div>
