@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card card-main">
   <div class="card-left tag-body">
     <div class="tag-text">
       <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="btn-backred tag-hashtag">
@@ -76,7 +76,7 @@
       </div>
     @endif
     @endforeach
-    <div class="card-body">
+    <div class="card-body mt-4">
       <post-like
         :initial-is-liked-by='@json($post->isLikedBy(Auth::user()))'
         :initial-count-likes='@json($post->count_likes)'
