@@ -7,7 +7,8 @@
 <div class="alert alert-success">{{ session('success') }}</div>
 @endif
 @include('nav')
-<div class="container">
+<div class="card-wrapper">
+  <div class="container">
   @include('users.user')
   @include('users.tabs', ['hasPosts' => true, 'hasLikes' => false])
 
@@ -15,5 +16,6 @@
     @include('posts.card')
   @endforeach
     
+  </div>
 </div>
 @endsection

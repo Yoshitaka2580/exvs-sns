@@ -1,16 +1,7 @@
-<div class="card card-create">
+<div class="card card-comment">
   @include('error_list')
-  <form method="POST" action="{{ route('comment.store', ['post' => $post]) }}">
-    @csrf
-    <input name="post_id" type="hidden" value="{{ $post->id }}">
-    <div class="form-group mt-3">
-      <textarea name="comment" class="form-control" rows="4" required placeholder="返信コメント">{{ old('commnet') }}</textarea>
-    </div>
-    <button type="submit" class="btn btn-submit btn-comment">返信する</button>
-  </form>
-
   <section>
-    <h5 class="card-text">返信一覧</h5>
+    <h5 class="card-text-p">返信一覧</h5>
     @forelse($post->comments as $comment)
     <div class="card-text comment-text">
       <p class="card-user">From: <a href="{{ route('users.show', ['name' => $comment->user->name]) }}" class="comment-user">{{ $comment->atsign }}</a></p>
@@ -58,6 +49,14 @@
     <p class="card-text-p">返信はありません。</p>
     @endforelse
   </section>
+  <form method="POST" action="{{ route('comment.store', ['post' => $post]) }}">
+    @csrf
+    <input name="post_id" type="hidden" value="{{ $post->id }}">
+    <div class="form-group mt-3">
+      <textarea name="comment" class="form-control" rows="4" required placeholder="返信コメント">{{ old('commnet') }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-submit btn-comment">返信する</button>
+  </form>
 </div>
 
 

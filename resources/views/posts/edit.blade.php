@@ -6,7 +6,7 @@
 @include('nav')
 <div class="card-wrapper">
   <div class="container">
-    <div class="card card-create">
+    <div class="card">
       @include('error_list')
       <form method="POST" action="{{ route('posts.update',['post' => $post]) }}">
         @method('PATCH')

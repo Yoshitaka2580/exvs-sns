@@ -1,22 +1,29 @@
-<div class="card">
-  <div class="card-body">
+<div class="card card-details">
+  <div class="card-left tag-body">
+    <div class="tag-text">
+      <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="btn-backred tag-hashtag">
+        {{ $post->category->name }}
+      </a>
+    </div>
     <a href="{{ route('users.show', ['name' => $post->user->name]) }}" class= "card-user">
       @if(!empty($post->user->thumbnail))
       <img src="/storage/user/{{ $post->user->thumbnail }}" class="editThumbnail">
       @else
       <i class="fas fa-user-circle fa-3x"></i>
       @endif
+      <h5 class="mb-0">{{ $post->user->name }}</h5>
     </a>
-    <h5 class="ml-3">
-      <a href="{{ route('users.show', ['name' => $post->user->name]) }}" class="card-user">
-        {{ $post->user->name }}
+  </div>
+  <div class="card-right">
+    <div class="card-title-btn">
+    <h4 class="card-title card-text">
+      <a href="{{ route('posts.show', ['post' => $post]) }}">
+        {{ $post->title }}
       </a>
-      <p class="card-created">{{ $post->created_at->format('Y/m/d H:i') }}</p>
-    </h5>
-    
-  @if( Auth::id() === $post->user_id )
+    </h4>
+    @if( Auth::id() === $post->user_id )
     <!-- ドロップダウンメニュー -->
-      <div class="ml-auto card-text">
+      <div class="ml-auto card-edit-btn">
         <div class="dropdown">
           <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-check"></i>
@@ -57,46 +64,30 @@
         </div>
       </div>
     @endif
-  </div>
-
-  <div class="card-body tag-body">
-    <div class="tag-text">
-      <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="btn-backred tag-hashtag">
-        {{ $post->category->name }}
-      </a>
     </div>
-  </div>
-
-  @foreach($post->tags as $tag)
+    @foreach($post->tags as $tag)
     @if($loop->first)
-      <div class="card-body tag-body">
-        <div class="tag-text">
+      <div class="tag-text">
     @endif
         <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="btn-backred tag-hashtag">
           {{ $tag->hashtag }}
         </a>
     @if($loop->last)
-        </div>
       </div>
     @endif
-  @endforeach
-  
-  <div class="text-body">
-    <h4 class="card-title card-text">{{ $post->title }}</h4>
-    <p class="card-text card-text-p">
-      {!! nl2br(e($post->body)) !!}
-    </p>
-  </div>
-  <div class="card-body">
-    <post-like
-      :initial-is-liked-by='@json($post->isLikedBy(Auth::user()))'
-      :initial-count-likes='@json($post->count_likes)'
-      :authorized='@json(Auth::check())'
-      endpoint="{{ route('posts.like', ['post' => $post]) }}"
-    >
-    </post-like>
-    <button class="btn btn-like-comment" onclick="location.href='{{ route('posts.show', ['post' => $post]) }}'">
-      <i class="fas fa-comment-dots"></i> {{ $post->comments->count() }}
-    </button>
+    @endforeach
+    <div class="card-body">
+      <post-like
+        :initial-is-liked-by='@json($post->isLikedBy(Auth::user()))'
+        :initial-count-likes='@json($post->count_likes)'
+        :authorized='@json(Auth::check())'
+        endpoint="{{ route('posts.like', ['post' => $post]) }}"
+      >
+      </post-like>
+      <button class="btn btn-like-comment" onclick="location.href='{{ route('posts.show', ['post' => $post]) }}'">
+        <i class="fas fa-comment-dots"></i> {{ $post->comments->count() }}
+      </button>
+      <p class="card-created">{{ $post->created_at->format('Y/m/d H:i') }}</p>
+    </div>
   </div>
 </div>
