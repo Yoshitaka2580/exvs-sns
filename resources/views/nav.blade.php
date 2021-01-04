@@ -1,6 +1,10 @@
 <header class="navbar navbar-expand navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="/posts"><i class="fas fa-gamepad"></i>MAXBOOSTON MATCHING</a>
+    <a class="navbar-home" href="/posts"><i class="fas fa-gamepad"></i>MAXBOOSTON MATCHING</a>
+    <form action="/search" method="get" class="input-group md-form form-sm form-2 pl-0 tag-form">
+      <input type="search" name="search" required class="form-control my-0 py-1 red-border" placeholder="キーワードで検索[タグ名]" style="color: #fff;">
+      <button type="submit" class="input-group-text red lighten-3"><i class="fas fa-search text-white"></i></button>
+    </form>
     <ul class="navbar-nav">
       @guest
       <li class="nav-item">
@@ -24,7 +28,7 @@
       <!-- Dropdown -->
       <li class="nav-item dropdown">
       <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
+        aria-haspopup="true" aria-expanded="false" style="color: #fff;">
         @if(!empty(Auth::user()->thumbnail))
           <img src="/storage/user/{{ Auth::user()->thumbnail }}" class="editThumbnail">
         @else
