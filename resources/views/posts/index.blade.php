@@ -6,7 +6,7 @@
 @include('nav')
 <nav class="tags-nav">
   <div class="cost-wrapper">
-    <div class="container cost-container">
+    <div class="container">
       <ul class="cost-category">
         <li>
           <a href="{{ route('posts.index') }}"><img src="img/exvs-sns-image/cost_all_on.png" alt="" class="cost-item"></a>
@@ -23,10 +23,6 @@
         <li>
           <a href="{{ route('posts.index', ['category_id'=>4]) }}" title="{{ 1500 }}"><img src="img/exvs-sns-image/cost1500_on.png" alt="" class="cost-item"></a>
         </li>
-        <form action="/search" method="get" class="input-group md-form form-sm form-2 pl-0">
-          <input type="search" name="search" required class="form-control my-0 py-1 red-border" placeholder="タグを検索" style="color: #fff;">
-          <button type="submit" class="input-group-text red lighten-3"><i class="fas fa-search text-grey"></i></button>
-        </form>
       </ul>
     </div>
   </div>

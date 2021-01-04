@@ -1,10 +1,8 @@
 <div class="card card-main">
   <div class="card-left tag-body">
-    <div class="tag-text">
-      <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="btn-backred tag-hashtag">
-        {{ $post->category->name }}
-      </a>
-    </div>
+    <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="btn-backred tag-hashtag">
+      {{ $post->category->name }}
+    </a>
     <a href="{{ route('users.show', ['name' => $post->user->name]) }}" class= "card-user">
       @if(!empty($post->user->thumbnail))
       <img src="/storage/user/{{ $post->user->thumbnail }}" class="editThumbnail">

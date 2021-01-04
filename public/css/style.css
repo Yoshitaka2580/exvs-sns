@@ -3,7 +3,10 @@
 body {
   font-family: "Lato";
   padding: 0;
-  background-color:#212121;
+  background-image: url(../img/exvs-sns-image/bg_blue.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
 
 .container {
@@ -16,17 +19,19 @@ a {
 }
 
 a:hover {
-  color: #e53935;
+  color:#DD2C00;
 }
+
 h5 {
   font-size: 15px;
 }
+
 .btn {
   margin:0;
 }
 
 .btn-backred:hover {
-  color: #000;
+  color: #212121;
 }
 
 .btn:hover {
@@ -39,7 +44,7 @@ h5 {
 }
 /* --- Nabar Head--- */
 .navbar{
-  background-color: #263238;
+  background-color: #212121;
   z-index: 100;
   position: fixed;
   top: 0;
@@ -47,20 +52,36 @@ h5 {
   width: 100%;
 }
 
-.navbar-brand {
+.navbar-home {
   font-size: 20px;
 }
 
-.navbar-nav {
-  margin-left: auto;
+.navbar-home:hover {
+  color: #DD2C00;
+  text-decoration: none;  
 }
 
 .nav-item {
   margin: auto;
+  font-size: 15px;
 }
 
 .nav-item:nth-child(2) {
   margin-left: 10px;
+}
+
+.tag-form {
+  margin-top: 0;
+  margin-bottom:0;
+  width: 400px;
+}
+
+.red.lighten-3 {
+  background-color:#DD2C00 !important;
+}
+
+.red.lighten-3:hover {
+  opacity: 0.7;
 }
 
 .fa-gamepad{
@@ -94,6 +115,10 @@ h5 {
   width: 200px;
 }
 
+.cost-item:hover {
+  opacity: 0.7;
+}
+
 .cost-link {
   margin-left: 25px;
   font-size: 25px;
@@ -102,49 +127,6 @@ h5 {
 
 .cost-link:first-child {
   margin-left: 0;
-}
-
-/* --- 検索フォーム--- */
-.tagInput {
-  width              : 420px;           
-  background-repeat  : no-repeat;        
-  background-position: 8px center;       
-  background-size    : auto 60%;        
-  background-color   :  #fff; 
-  padding-left: 10px;
-  border-color: aliceblue;
-  border-radius      : 4px;              
-  color              : #000;         
-  font-size          : 20px;           
-  outline            : 0;
-  margin-left: 35px;
-}
-
-.tagInput::-ms-clear {
-  display        : none;             /* ×を消す            */
-}
-
-.btn-search {
-  border: none;
-  font-size: 20px;
-  background-color: #e53935;
-  color: #fff;
-  padding-left: 15px;
-
-}
-
-.md-form {
-  margin-top: 0;
-  margin-bottom:0;
-  margin-left: 30px;
-}
-
-.red.lighten-3 {
-  background-color: #e53935 !important;
-}
-
-.btn-search:focus {
-  outline: none;
 }
 
 /* --- HOME --- */
@@ -158,7 +140,7 @@ h5 {
 }
 
 .top-title {
-  color: #e53935;
+  color:#DD2C00;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -217,7 +199,7 @@ h5 {
 }
 
 .social-item {
-  color: #000;
+  color: #212121;
   height: 42px;
   width: 42px;
   font-size: 25px;
@@ -239,7 +221,7 @@ h5 {
 
 .card {
   background-color: #212121;
-  border: 2px solid #e53935;
+  border: 2px solid#DD2C00;
   padding: 15px;
 }
 
@@ -263,7 +245,6 @@ h5 {
 } 
 
 .card-right {
- margin-left: 20px;
  width: 100%;
 }
 
@@ -296,7 +277,7 @@ h5 {
 .tag-hashtag {
   color: #fff;
   padding: 3px;
-  background-color: #e53935;
+  background-color:#DD2C00;
   border-radius: 5px;
   font-size: 14px;
 }
@@ -347,15 +328,15 @@ h5 {
 /*  --- posts.form--- */
 .btn-back {
   background-color: #fff;
-  color: #000;
+  color: #212121;
 }
 
 .btn-back:hover {
-  color: #000;
+  color: #212121;
 }
 
 .btn-submit {
-  background-color: #e53935;
+  background-color:#DD2C00;
   color: #fff;
 }
 
@@ -382,7 +363,7 @@ textarea {
 }
 
 .comment-user {
-  color: #e53935;
+  color:#DD2C00;
 }
 
 .btn-comment {
@@ -404,7 +385,7 @@ textarea {
 /* --- tags show ---- */
 .card-title-tag {
   text-align: center;
-  color: #e53935;
+  color:#DD2C00;
   font-weight: bold;
   padding-top: 10px;
 }
@@ -429,5 +410,5 @@ textarea {
   color: #fff;
 }
 .pagination .page-item .page-link:hover {
-  background-color: #263238;
+  background-color: #212121;
 }
