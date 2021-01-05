@@ -38,7 +38,6 @@
     @include('posts.index_card')
     @endforeach
   </div>
-
   <div class="d-flex justify-content-center mb-5">
     {{ $posts->appends(['category_id' => $category_id])->links() }}
   </div>
