@@ -90,12 +90,8 @@ h5 {
 }
 
 /* --- Navbar Cost --- */
-.tags-nav {
-  padding-top: 55px;
-}
-
 .cost-wrapper {
-  margin-top: 30px;
+  padding-top: 95px;
 }
 
 .cost-category {
@@ -238,20 +234,19 @@ h5 {
 }
 .card-details:first-child {
   margin-top: 0;
-} 
+}
 
 .card-right {
  width: 100%;
 }
 
-.card-body {
+.card-score {
   display: flex;
   padding: 0;
 }
 
 .card-user {
   font-weight: bold;
-  margin-top: 12px;
 }
 
 .card-created {
@@ -264,9 +259,6 @@ h5 {
 
 .card-edit-btn {
   color: grey;
-}
-.tag-text {
-  margin-top: 12px
 }
 
 .tag-hashtag {
@@ -284,7 +276,6 @@ h5 {
 .card-title {
   margin-bottom: 0;
   font-weight: bold;
-  text-align: center;
 }
 
 .btn-like-comment {
@@ -401,4 +392,12 @@ textarea {
 
 .pagination .page-item .page-link:hover {
   background-color: #212121;
+}
+
+.modal-body {
+  color: #212121;
+}
+
+.cost-name {
+  font-size: 15px;
 }

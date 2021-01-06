@@ -4,27 +4,25 @@
 
 @section('content')
 @include('nav')
-<nav class="tags-nav">
-  <div class="cost-wrapper">
-    <div class="container">
-      <ul class="cost-category">
-        <li>
-          <a href="{{ route('posts.index') }}"><img src="img/exvs-sns-image/cost_all_on.png" alt="" class="cost-item"></a>
-        </li>
-        <li>
-          <a href="{{ route('posts.index', ['category_id'=>1]) }}" title="{{ 3000 }}"><img src="img/exvs-sns-image/cost3000_on.png" alt="" class="cost-item"></a>
-        </li>
-        <li>
-          <a href="{{ route('posts.index', ['category_id'=>2]) }}" title="{{ 2500 }}"><img src="img/exvs-sns-image/cost2500_on.png" alt="" class="cost-item"></a>
-        </li>
-        <li>
-          <a href="{{ route('posts.index', ['category_id'=>3]) }}" title="{{ 2000 }}"><img src="img/exvs-sns-image/cost2000_on.png" alt="" class="cost-item"></a>
-        </li>
-        <li>
-          <a href="{{ route('posts.index', ['category_id'=>4]) }}" title="{{ 1500 }}"><img src="img/exvs-sns-image/cost1500_on.png" alt="" class="cost-item"></a>
-        </li>
-      </ul>
-    </div>
+<nav class="cost-wrapper">
+  <div class="container">
+    <ul class="cost-category">
+      <li>
+        <a href="{{ route('posts.index') }}"><img src="img/exvs-sns-image/cost_all_on.png" class="cost-item"></a>
+      </li>
+      <li>
+        <a href="{{ route('posts.index', ['category_id'=>1]) }}" title="{{ 3000 }}"><img src="img/exvs-sns-image/cost3000_on.png" class="cost-item"></a>
+      </li>
+      <li>
+        <a href="{{ route('posts.index', ['category_id'=>2]) }}" title="{{ 2500 }}"><img src="img/exvs-sns-image/cost2500_on.png" class="cost-item"></a>
+      </li>
+      <li>
+        <a href="{{ route('posts.index', ['category_id'=>3]) }}" title="{{ 2000 }}"><img src="img/exvs-sns-image/cost2000_on.png" class="cost-item"></a>
+      </li>
+      <li>
+        <a href="{{ route('posts.index', ['category_id'=>4]) }}" title="{{ 1500 }}"><img src="img/exvs-sns-image/cost1500_on.png" class="cost-item"></a>
+      </li>
+    </ul>
   </div>
 </nav>
 @if (session('flash_message'))
