@@ -14,7 +14,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $comment->id }}">
-              <i class="fas fa-trash-alt mr-1"></i>記事を削除する
+              <i class="fas fa-trash-alt mr-1"></i>コメントを削除する
             </a>
           </div>
         </div>
@@ -53,7 +53,7 @@
     @csrf
     <input name="post_id" type="hidden" value="{{ $post->id }}">
     <div class="form-group mt-3">
-      <textarea name="comment" class="form-control" rows="4" required placeholder="返信コメント">{{ old('commnet') }}</textarea>
+      <textarea name="comment" class="form-control" rows="3" required placeholder="返信コメント">{{ old('commnet') }}</textarea>
     </div>
     <button type="submit" class="btn btn-submit btn-comment">返信する</button>
   </form>

@@ -8,10 +8,11 @@
   <select 
     name="category_id"
     class="form-control"
-    value="{{ old('category_id') }}"
+    value="{{ $post->category_id ?? old('category_id') }}"
   >
+  <option>自分の機体コストを選択してください</option>
   @foreach($categories as $id => $name)
-    <option value="{{ $id }}">{{ $name }}</option>
+    <option value="{{ $id }}">{{ $name }}cost</option>
   @endforeach
   </select>
 </div>
@@ -24,5 +25,7 @@
 </div>
   
 <div class="form-group">
-  <textarea name="body" class="form-control" rows="9" placeholder="募集内容" required>{{ $post->body ?? old('body') }}</textarea>
+  <textarea name="body" class="form-control" rows="7" placeholder="ここに詳細内容書いてください。" required>
+    {{ $post->body ?? old('body') }}
+  </textarea>
 </div>

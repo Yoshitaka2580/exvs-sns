@@ -13,9 +13,8 @@
   @include('users.tabs', ['hasPosts' => true, 'hasLikes' => false])
 
   @foreach($posts as $post)
-    @include('posts.card')
+    @include('posts.index_card')
   @endforeach
-    
   </div>
 </div>
 @endsection

@@ -8,7 +8,7 @@
     @include('error_list')
     <div class="card-text">
       <h2 class="card-title">新規登録</h2>
-    　<a href="/login/guest" class="btn btn-block btn-success mt-2">ゲストユーザーでログイン</a>
+      <a href="/login/guest" class="btn btn-block btn-secondary mt-2">ゲストユーザーでログイン</a>
       <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger mt-2">
         <i class="fab fa-google mr-1"></i>Googleで登録
       </a>
