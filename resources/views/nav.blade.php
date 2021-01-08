@@ -20,7 +20,7 @@
 
       @auth
       <li class="nav-item">
-        <a class="nav" href="{{ route('posts.create') }}"><i class="fas fa-pen-alt"></i>募集する</a>
+        <a class="nav" href="{{ route('posts.create') }}"><i class="fas fa-pen-alt"></i>投稿する</a>
       </li>
       @endauth
 
