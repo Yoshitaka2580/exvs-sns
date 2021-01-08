@@ -7,13 +7,14 @@
 <div class="alert alert-success">{{ session('success') }}</div>
 @endif
 @include('nav')
-<div class="container">
+<div class="card-wrapper">
+  <div class="container">
   @include('users.user')
   @include('users.tabs', ['hasPosts' => true, 'hasLikes' => false])
 
   @foreach($posts as $post)
-    @include('posts.card')
+    @include('posts.index_card')
   @endforeach
-    
+  </div>
 </div>
 @endsection

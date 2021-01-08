@@ -8,16 +8,14 @@
     @include('error_list')
     <div class="card-text">
       <h2 class="card-title pb-1">ログイン</h2>
-      <button type="submit" class="btn btn-secondary guest-btn">
-    　　<a href="/login/guest">Guest Login</a>
-      </button>
+      <a href="/login/guest" class="btn btn-block btn-secondary mt-2">ゲストユーザーでログイン</a>
       <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger mt-2">
         <i class="fab fa-google mr-1"></i>Googleでログイン
       </a>
       <a href="{{ route('login.{provider}', ['provider' => 'facebook']) }}" class="btn btn-block btn-primary mt-2">
         <i class="fab fa-facebook-f mr-1"></i>Facebookでログイン
       </a>
-      <form action="{{ route('login') }}" method="POST">
+      <form action="{{ route('login') }}" method="POST" class="mt-3">
         @csrf
         <div class="md-form">
           <label for="email" class="active">メールアドレス</label>

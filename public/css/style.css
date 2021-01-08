@@ -3,7 +3,11 @@
 body {
   font-family: "Lato";
   padding: 0;
-  background-color:#212121;
+  background-image: url(../img/exvs-sns-image/bg_black.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  color: #fff;
 }
 
 .container {
@@ -16,24 +20,32 @@ a {
 }
 
 a:hover {
-  color: #e53935;
+  color:#DD2C00;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+.btn {
+  margin:0;
 }
 
 .btn-backred:hover {
-  color: #000;
+  color: #212121;
 }
 
 .btn:hover {
-  color: #fff;
+  color: rgba(255,255,255,.75);
 }
 
 .card-text-p {
-  color: #fff;
   font-size: 15px;
 }
+
 /* --- Nabar Head--- */
 .navbar{
-  background-color: #263238;
+  background-color: #212121;
   z-index: 100;
   position: fixed;
   top: 0;
@@ -41,14 +53,36 @@ a:hover {
   width: 100%;
 }
 
-.navbar-brand {
-  font-size: 30px;
-  margin-left: auto;
+.navbar-home {
+  font-size: 20px;
 }
 
-.fa-gamepad{
-  padding-right: 10px;
-  
+.navbar-home:hover {
+  color: #DD2C00;
+  text-decoration: none;  
+}
+
+.nav-item {
+  margin: auto;
+  font-size: 15px;
+}
+
+.nav-item:nth-child(2) {
+  margin-left: 10px;
+}
+
+.tag-form {
+  margin-top: 0;
+  margin-bottom:0;
+  width: 400px;
+}
+
+.red.lighten-3 {
+  background-color:#DD2C00 !important;
+}
+
+.red.lighten-3:hover {
+  opacity: 0.7;
 }
 
 .user-circle{
@@ -56,21 +90,21 @@ a:hover {
 }
 
 /* --- Navbar Cost --- */
-.tags-nav {
-  padding-top: 75px;
-}
-
 .cost-wrapper {
-  background-color: #e53935;
+  padding-top: 95px;
 }
 
-.cost-container {
-  padding: 20px 0;
+.cost-category {
+  display: flex;
+  justify-content: center;
 }
 
 .cost-item {
-  display: flex;
-  justify-content: center;
+  width: 200px;
+}
+
+.cost-item:hover {
+  opacity: 0.7;
 }
 
 .cost-link {
@@ -79,85 +113,55 @@ a:hover {
   color: #fff;
 }
 
-
 .cost-link:first-child {
   margin-left: 0;
 }
 
-/* --- 検索フォーム--- */
-.tagInput {
-  width              : 420px;           
-  background-repeat  : no-repeat;        
-  background-position: 8px center;       
-  background-size    : auto 60%;        
-  background-color   :  #fff; 
-  padding-left: 10px;
-  border-color: aliceblue;
-  border-radius      : 4px;              
-  color              : #000;         
-  font-size          : 20px;           
-  outline            : 0;
-  margin-left: 35px;
-}
-
-.tagInput::-ms-clear {
-  display        : none;             /* ×を消す            */
-}
-
-.btn-search {
-  border: none;
-  font-size: 20px;
-  background-color: #e53935;
-  color: #fff;
-  padding-left: 15px;
-
-}
-
-.btn-search:focus {
-  outline: none;
-}
-
 /* --- HOME --- */
-.home {
-  padding-top: 75px;
+.top-wrapper {
+  position: relative;
+  overflow-x: hidden;
 }
 
-.top-wrapper {
-  text-align: center;
+.top-background-img {
+  width: 100%;
+  height: 650px;
   background-size: cover;
 }
 
+.top-container {
+  position: absolute;
+  left: 45%;
+  top: 12%;
+  transform: translateX(-50%);
+}
+
+.top-titlebox {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  background-color: rgba(255,255,255,0.5);
+}
+
 .top-title {
-  color: #e53935;
-  font-weight: 700;
+  margin: 0 auto;
   letter-spacing: 3px;
   text-transform: uppercase;
-}
-
-.top-container {
-  padding: 250px 0;
-}
-
-.top-title {
-  font-size: 90px;
+  text-align: center;
+  font-weight: normal;
+  color: #212121;
 }
 
 .btn-about {
   background-color: #fff;
-  border-radius: 5px;
-  font-size: 20px;
 }
 
 .btn-about:hover {
   background-color: #c0c0c0;
-  color: #fff;
 }
 
 /* --- My Profile --- */
-.about-wrapper {
-  background-color:#f2f2f2;
-}
-
 .about-container {
   padding: 60px 0 70px 0;
 }
@@ -187,7 +191,7 @@ a:hover {
 }
 
 .social-item {
-  color: #000;
+  color: #212121;
   height: 42px;
   width: 42px;
   font-size: 25px;
@@ -204,71 +208,89 @@ a:hover {
 
 /* --- posts. card --- */
 .card-wrapper {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .card {
   background-color: #212121;
-  border: 2px solid #e53935;
-  margin-top: 20px;
+  border: 2px solid#DD2C00;
+  padding: 15px;
 }
 
-.card-body {
+.card-main {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
-  padding: 20px;
+}
+
+.card-main:first-child {
+  margin-top: 0;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.card-details:first-child {
+  margin-top: 0;
+}
+
+.card-right {
+ width: 100%;
+}
+
+.card-score {
+  display: flex;
+  padding: 0;
 }
 
 .card-user {
   font-weight: bold;
-  color: #fff;
 }
 
 .card-created {
-  margin-top: 5px;
   margin-bottom: 0;
   font-size: .9rem;
   font-weight: 400;
-  color: #fff;
+  color:#fff;
+  margin-left: auto;
 }
 
-.tag-body {
-  padding-top: 0;
-  padding-bottom: 0;
+.card-edit-btn {
+  color: grey;
 }
 
 .tag-hashtag {
-  color: #fff;
-  padding: 5px;
-  background-color: #e53935;
-  margin-left: 10px;
+  padding: 3px;
+  background-color:#DD2C00;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
-.text-body {
-  padding-left: 20px;
+.card-title-btn {
+  display: flex;
+  flex-direction: row;
 }
 
 .card-title {
   margin-bottom: 0;
-  text-align: center;
-  color: #fff;
   font-weight: bold;
-}
-
-.like-btn {
-  color: #fff;
 }
 
 .btn-like-comment {
   padding: 0;
-  color: #fff;
   border: none;
   background-color: #212121;
-  font-size: 20px;
+  font-size: 15px;
 }
 
-.btn-like-comment:last-child {
-  margin-left: 30px;
+.btn-like-comment {
+  margin-left: 20px;
+}
+
+.btn-like-comment:first-child {
+  margin-left: 0;
 }
 
 .fa-comment-dots, .fa-star {
@@ -280,21 +302,22 @@ a:hover {
 /* --- posts.create--- */
 .card-create {
   padding: 20px;
+  margin-top: 20px;
 }
 
 /*  --- posts.form--- */
 .btn-back {
-  background-color: #fff;
-  color: #000;
+  background-color:#fff;
+  color: #212121;
 }
 
 .btn-back:hover {
-  color: #000;
+  color: #212121;
 }
 
 .btn-submit {
-  background-color: #e53935;
-  color: #fff;
+  background-color:#DD2C00;
+  
 }
 
 .btn-submit:hover {
@@ -317,12 +340,10 @@ textarea {
 .comment-text {
   display: flex;
   border-top: 1px solid #fff;
-  margin-top: 30px;
-  padding-top: 5px;
 }
 
 .comment-user {
-  color: #e53935;
+  color:#DD2C00;
 }
 
 .btn-comment {
@@ -335,8 +356,8 @@ textarea {
 }
 
 .editThumbnail {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -344,14 +365,14 @@ textarea {
 /* --- tags show ---- */
 .card-title-tag {
   text-align: center;
-  color: #e53935;
+  color:#DD2C00;
   font-weight: bold;
   padding-top: 10px;
 }
 
 .tag-count {
   text-align: center;
-  color: #fff;
+  
 }
 
 /* --- login form --- */
@@ -363,4 +384,20 @@ textarea {
 
 .login-btn {
   text-align: center;
+}
+
+.pagination .page-item .page-link {
+  color: #fff;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #212121;
+}
+
+.modal-body {
+  color: #212121;
+}
+
+.cost-name {
+  font-size: 15px;
 }

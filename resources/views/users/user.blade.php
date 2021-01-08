@@ -7,11 +7,11 @@
       <i class="fas fa-user-circle fa-3x"></i>
       @endif
     </a>
-    <h5 class="ml-3">
+    <h4 class="ml-3">
       <a href="{{ route('users.show', ['name' => $user->name]) }}" class="card-user">
         {{ $user->name }}
       </a>
-    </h5>
+    </h4>
     @if( Auth::id() === $user->id )
     <!-- ドロップダウンメニュー -->
     <div class="ml-auto card-text">

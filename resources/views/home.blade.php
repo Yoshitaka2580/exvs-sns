@@ -7,12 +7,12 @@
 <!-- HOME -->
 <main class="home">
   <div class="top-wrapper" id="home">
+    <img class="top-background-img" src="{{ asset('img/jeshoots-com-eCktzGjC-iU-unsplash.jpg') }}">
     <div class="container top-container">
-      <h1 class="top-title">maxbooston matching<span class="element font-weight-bold" data-elements="Kerri Deo.,A Graphic Designer.,A Photographer."></span></h1>
-      <div class="pt-2">
-        <a href="#about" class="btn btn-about">Profile</a>
+      <div class="top-titlebox">
+        <h1 class="top-title">maxbooston<br>matching</h1>
       </div>
-    </div>
+      <a href="/login/guest" class="btn btn-secondary mt-2">ゲストユーザーでログイン</a>
   </div>
 
   <div class="about-wrapper" id="about">

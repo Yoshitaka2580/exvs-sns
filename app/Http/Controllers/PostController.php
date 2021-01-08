@@ -48,7 +48,7 @@ class PostController extends Controller
     public function create()
     {
         $category  = new Category;
-        $categories = $category->getLists()->prepend('機体コストを選択してください', '');
+        $categories = $category->getLists();
 
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
@@ -66,7 +66,8 @@ class PostController extends Controller
         $tag = Tag::where('name', $search)->first();
 
         if ($tag === null) {
-            return redirect('/posts')->with('flash_message', 'タグが未登録です');
+            return redirect('/posts')
+                    ->with('flash_message', '検索に該当するタグは登録されていません');
         }
         
         return view('tags.show', compact('tag'));
@@ -94,7 +95,7 @@ class PostController extends Controller
         });
 
         $category = new Category;
-        $categories = $category->getLists()->prepend('機体コストを選択してください', '');
+        $categories = $category->getLists();
 
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
