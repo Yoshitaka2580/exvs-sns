@@ -8,6 +8,11 @@
     <ul class="navbar-nav">
       @guest
       <li class="nav-item">
+        <a class="nav-link" href="/posts">投稿一覧</a>
+      </li>
+      @endguest
+      @guest
+      <li class="nav-item">
         <a class="nav-link" href="{{ route('register') }}">新規登録</a>
       </li>
       @endguest
@@ -20,7 +25,7 @@
 
       @auth
       <li class="nav-item">
-        <a class="nav" href="{{ route('posts.create') }}"><i class="fas fa-pen-alt"></i>投稿する</a>
+        <a class="nav-link" href="{{ route('posts.create') }}"><i class="fas fa-pen-alt"></i>投稿する</a>
       </li>
       @endauth
 
