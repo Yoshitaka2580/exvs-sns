@@ -19,12 +19,12 @@ a {
   color: #fff;
 }
 
-a:hover {
-  color:#DD2C00;
+p {
+  margin-bottom: 0;
 }
 
-h5 {
-  font-size: 15px;
+a:hover {
+  color:#DD2C00;
 }
 
 .btn {
@@ -337,17 +337,35 @@ textarea {
 }
 
 /* --- posts.comment ---*/
+.card-comment {
+  float: right;
+  width: 75%;
+  position: relative;
+  margin-top: 20px;
+}
 .comment-text {
   display: flex;
-  border-top: 1px solid #fff;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
 }
 
 .comment-user {
+  margin-left: 15px;
   color:#DD2C00;
+  font-weight: bold;
 }
 
-.btn-comment {
+.comment-form {
+  display: flex;
+  margin-top: 40px;
+}
+
+.comment-btn {
   float: right;
+}
+
+.fa-user-circle {
+  font-size: 40px;
 }
 
 /* --- Users.form.--- */
