@@ -10,7 +10,6 @@
     class="form-control"
     value="{{ $post->category_id ?? old('category_id') }}"
   >
-  <option>自分の機体コストを選択してください</option>
   @foreach($categories as $id => $name)
     <option value="{{ $id }}">{{ $name }}cost</option>
   @endforeach
