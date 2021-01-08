@@ -16,11 +16,6 @@ class TagController extends Controller
     {
         $tag = Tag::where('name', $name)->first();
         
-        if ($tag === null) {
-            return redirect('/posts')->with('flash_message', 'タグが未登録です');
-        }
-        
         return view('tags.show', compact('tag'));
     }
-    
 }
