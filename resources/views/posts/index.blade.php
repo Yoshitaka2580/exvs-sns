@@ -32,6 +32,12 @@
 @endif
 <div class="card-wrapper">
   <div class="container">
+    @if ($posts->total() === 0)
+    <h5>投稿はありません</h5>
+    @else
+    <h5>{{ $posts->total() }}件の投稿</h5>
+    @endif
+    
     @foreach($posts as $post)
     @include('posts.index_card')
     @endforeach

@@ -35,7 +35,7 @@ class PostController extends Controller
         return view('posts.index', [
             'posts' => $posts, 
             'categories' => $categories, 
-            'category_id'=>$category_id,
+            'category_id'=> $category_id,
         ]);
     }
 
