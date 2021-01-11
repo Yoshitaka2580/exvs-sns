@@ -4,7 +4,7 @@
       @if(!empty($user->thumbnail))
       <img src="/storage/user/{{ $user->thumbnail }}" class="mypage-thumbnail">
       @else
-      <i class="fas fa-user-circle fa-3x"></i>
+      <i class="fas fa-user" style="font-size: 150px;"></i>
       @endif
     </a>
   </div>

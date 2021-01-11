@@ -61,7 +61,7 @@
       @endif
     </div>
     <h3 class="card-title">
-      <a href="{{ route('posts.show', ['post' => $post]) }}">{{ $post->title }}</a>
+      <a href="{{ route('posts.show', ['post' => $post]) }}" style="color: #117ec6;">{{ $post->title }}</a>
     </h3>
     @foreach($post->tags as $tag)
     @if($loop->first)
