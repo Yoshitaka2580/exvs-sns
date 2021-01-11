@@ -1,9 +1,10 @@
 <template>
   <div>
     <button
-      class="btn-sm shadow-none border border-primary p-2"
+      class="btn-sm shadow-none border border-danger p-2"
       :class="buttonColor"
-      @click="clickFollow" 
+      @click="clickFollow"
+      style="width: 120px;"
     >
       <i
         class="mr-1"
@@ -37,7 +38,7 @@
     computed: {
       buttonColor() {
         return this.isFollowedBy
-          ? 'bg-primary text-white'
+          ? 'bg-danger text-white'
           : 'bg-white'
       },
       buttonIcon() {

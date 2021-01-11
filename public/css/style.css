@@ -332,10 +332,6 @@ textarea {
   resize: none;
 }
 
-.card-user-body {
-  padding-top: 0;
-}
-
 /* --- posts.comment ---*/
 .card-comment {
   float: right;
@@ -380,6 +376,16 @@ textarea {
   border-radius: 50%;
 }
 
+.mypage-thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-mypage {
+  display: flex;
+  flex-direction: row;
+}
 /* --- tags show ---- */
 .card-title-tag {
   text-align: center;
