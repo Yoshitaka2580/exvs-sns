@@ -37,18 +37,7 @@
       </follow-button>
     @endif
   </div>
-  
   <div class="card-body card-user-body">
     <p class="card-text-p">{{ $user->body }}</p>
-  </div>
-  <div class="card-body">
-    <div class="card-text">
-      <a href="{{ route('users.followings', ['name' => $user->name]) }}" class="card-text-p font-weight-bold">
-        {{ $user->count_followings }} フォロー
-      </a>
-      <a href="{{ route('users.followers', ['name' => $user->name]) }}" class="ml-3 card-text-p font-weight-bold">
-        {{ $user->count_followers }} フォロワー
-      </a>
-    </div>
   </div>
 </div>
