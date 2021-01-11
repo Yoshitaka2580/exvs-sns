@@ -26,8 +26,11 @@
   </div>
 </nav>
 @if (session('flash_message'))
-<div class="flash_message card-text text-center alert alert-danger">
+<div class="flash_message card-text text-center alert alert-danger" role="alert">
   {{ session('flash_message') }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 @endif
 <div class="card-wrapper">
@@ -37,7 +40,7 @@
     @else
     <h5>{{ $posts->total() }}件の投稿</h5>
     @endif
-    
+
     @foreach($posts as $post)
     @include('posts.index_card')
     @endforeach
