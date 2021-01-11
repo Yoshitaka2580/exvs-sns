@@ -11,4 +11,16 @@
       お気に入り
     </a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link {{ $hasFollowings ? 'active' : '' }}"
+       href="{{ route('users.followings', ['name' => $user->name]) }}">
+       {{ $user->count_followings }} フォロー
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ $hasFollowers ? 'active' : '' }}"
+       href="{{ route('users.followers', ['name' => $user->name]) }}">
+      {{ $user->count_followers }} フォロワー
+    </a>
+  </li>
 </ul>

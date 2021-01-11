@@ -7,7 +7,7 @@
 <div class="card-wrapper">
   <div class="container">
     @include('users.user')
-    @include('users.tabs', ['hasPosts' => false, 'hasLikes' => true])
+    @include('users.tabs', ['hasPosts' => false, 'hasLikes' => true, 'hasFollowings' => false, 'hasFollowers' => false])
 
     @foreach($posts as $post)
       @include('posts.card')
