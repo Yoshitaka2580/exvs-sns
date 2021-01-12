@@ -302,6 +302,20 @@ a:hover {
 }
 
 /*  --- posts.form--- */
+.name-label {
+  display: block;
+  color: #545658;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.form-cost {
+  width: 150px;
+}
+
+.form-alert {
+  color: #DD2C00;
+}
 .btn-back {
   background-color:#fff;
   color: #212121;
