@@ -63,7 +63,7 @@ export default {
     border: 1px solid #747373;
     color: #747373;
     margin-right: 4px;
-    border-radius: 0px;
+    border-radius: 0;
     font-size: 13px;
   }
   .vue-tags-input .ti-tag::before {
