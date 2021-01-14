@@ -61,7 +61,7 @@ p {
 }
 
 .red.lighten-3 {
-  background-color:#DD2C00 !important;
+  background-color:#FF1744 !important;
 }
 
 .red.lighten-3:hover {
@@ -120,6 +120,22 @@ p {
 .cost-1500 {
   border: 1px solid #00C853;
   background-color:#E8F5E9;
+  color: #00C853;
+}
+
+.cost-3000:hover {
+  color: #FF3D00;
+}
+
+.cost-2500:hover {
+  color: #FF6D00;
+}
+
+.cost-2000:hover {
+  color: #FBC02D;
+}
+
+.cost-1500:hover {
   color: #00C853;
 }
 
@@ -271,6 +287,8 @@ p {
   background-color: #d5e9f7;
   border-radius: 5px;
   font-size: 14px;
+  border: 1px solid #b8dbf2;
+  box-sizing: border-box;
 }
 
 .card-title-btn {
@@ -288,8 +306,6 @@ p {
 }
 .btn-like-comment {
   padding: 0;
-  border: none;
-  background-color: ;
   font-size: 15px;
 }
 
@@ -302,8 +318,10 @@ p {
 }
 
 .fa-comment-dots, .fa-star {
-  margin-right: 20px;
+  margin-right: 10px;
 }
+
+
 
 /* --- Dropdown menu --- */
 
@@ -326,11 +344,11 @@ p {
 }
 
 .form-alert {
-  color: #DD2C00;
+  color: #FF1744;
 }
 
 .btn-submit {
-  background-color:#DD2C00;
+  background-color:#FF1744;
   color: #fff;
   
 }
@@ -421,4 +439,14 @@ textarea {
 
 .cost-name {
   font-size: 15px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:focus {
+  background-color: #464c56;
+  color: #fff;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  background-color: #464c56;
+  color: #fff;
 }
