@@ -1,7 +1,7 @@
 @csrf
 <div class="md-form">
   <p class="name-label">タイトル<span class="form-alert">※</span></p>
-  <input type="text" name="title" class="form-control p-0" value="{{ $post->title ?? old('title') }}" required style="color: #fff;">
+  <input type="text" name="title" class="form-control p-0" value="{{ $post->title ?? old('title') }}" required>
 </div>
 
 <div class="form-group">

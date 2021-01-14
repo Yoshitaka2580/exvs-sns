@@ -19,12 +19,12 @@
         @csrf
         <div class="md-form">
           <label for="email" class="active">メールアドレス</label>
-          <input type="text" class="form-control" id="email" name="email" value="{{old('email') }}" required style="color: #fff;">
+          <input type="text" class="form-control" id="email" name="email" value="{{old('email') }}" required>
         </div>
 
         <div class="md-form">
           <label for="password" class="active">パスワード</label>
-          <input type="password" class="form-control" id="password" name="password" required style="color: #fff;">
+          <input type="password" class="form-control" id="password" name="password" required>
         </div>
 
         <input type="hidden" name="remember" id="remember" value="on">

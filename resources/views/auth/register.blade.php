@@ -19,20 +19,20 @@
         @csrf
         <div class="md-form">
           <label for="name">ユーザー名</label>
-          <input type="text" class="form-control" id="name" name="name" value="{{old('name') }}" required style="color: #fff;">
+          <input type="text" class="form-control" id="name" name="name" value="{{old('name') }}" required>
           <small>登録後の変更はできません</small>
         </div>
         <div class="md-form">
           <label for="email">メールアドレス</label>
-          <input type="text" class="form-control" id="email" name="email" value="{{old('email') }}" required style="color: #fff;">
+          <input type="text" class="form-control" id="email" name="email" value="{{old('email') }}" required>
         </div>
         <div class="md-form">
           <label for="password">パスワード</label>
-          <input type="password" class="form-control" id="password" name="password" required style="color: #fff;">
+          <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <div class="md-form">
           <label for="password_confirmation">パスワード確認</label>
-          <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required style="color: #fff;">
+          <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
         </div>
         <div class="login-btn">
           <button type="submit" class="btn btn-submit">アカウント作成</button>
