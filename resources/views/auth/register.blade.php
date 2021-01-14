@@ -3,6 +3,7 @@
 @section('title', '新規登録')
 
 @section('content')
+@include('nav')
 <div class="card-wrapper">
   <div class="card login-form">
     @include('error_list')
@@ -19,12 +20,12 @@
         @csrf
         <div class="md-form">
           <label for="name">ユーザー名</label>
-          <input type="text" class="form-control" id="name" name="name" value="{{old('name') }}" required>
+          <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
           <small>登録後の変更はできません</small>
         </div>
         <div class="md-form">
           <label for="email">メールアドレス</label>
-          <input type="text" class="form-control" id="email" name="email" value="{{old('email') }}" required>
+          <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
         </div>
         <div class="md-form">
           <label for="password">パスワード</label>

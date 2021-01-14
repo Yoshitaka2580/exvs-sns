@@ -3,6 +3,7 @@
 @section('title', '新規登録')
 
 @section('content')
+@include('nav')
 <div class="card-wrapper">
   <div class="card login-form">
     @include('error_list')
