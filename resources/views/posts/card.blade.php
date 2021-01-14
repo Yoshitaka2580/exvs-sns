@@ -1,13 +1,13 @@
 <div class="card card-details">
   <div class="card-left">
-    <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}">
+    <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost">
       {{ $post->category->name }}cost
     </a>
     <a href="{{ route('users.show', ['name' => $post->user->name]) }}" class= "card-user">
       @if(!empty($post->user->thumbnail))
       <img src="/storage/user/{{ $post->user->thumbnail }}" class="editThumbnail">
       @else
-      <i class="fas fa-user-circle fa-3x"></i>
+      <i class="fas fa-user-circle"></i>
       @endif
     </a>
   </div>
@@ -74,9 +74,9 @@
         endpoint="{{ route('posts.like', ['post' => $post]) }}"
       >
       </post-like>
-      <button class="btn btn-like-comment" onclick="location.href='{{ route('posts.show', ['post' => $post]) }}'">
+      <a class="btn-like-comment" onclick="location.href='{{ route('posts.show', ['post' => $post]) }}'">
         <i class="fas fa-comment-dots"></i> {{ $post->comments->count() }}
-      </button>
+      </a>
       @foreach($post->tags as $tag)
       @if($loop->first)
       @endif

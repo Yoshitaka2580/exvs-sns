@@ -13,12 +13,12 @@
         <input type="hidden" name="token" value="{{ $token }}">
         <div class="md-form">
           <label for="name">ユーザー名</label>
-          <input class="form-control" type="text" id="name" name="name" required style="color: #fff;">
+          <input class="form-control" type="text" id="name" name="name" required>
           <small class="card-text-p">登録後の変更はできません</small>
         </div>
         <div class="md-form">
           <label for="email">メールアドレス</label>
-          <input class="form-control" type="text" id="email" name="email" value="{{ $email }}" disabled style="color: #fff;">
+          <input class="form-control" type="text" id="email" name="email" value="{{ $email }}" disabled>
         </div>
         <div class="login-btn">
           <button class="btn btn-submit" type="submit">ユーザー登録</button>

@@ -8,19 +8,19 @@
   <div class="container">
     <ul class="cost-category">
       <li>
-        <a href="{{ route('posts.index') }}"><img src="img/exvs-sns-image/cost_all_on.png" class="cost-item"></a>
+        <a href="{{ route('posts.index') }}" class="cost-item cost-all ml-0">cost All</a>
       </li>
       <li>
-        <a href="{{ route('posts.index', ['category_id'=>1]) }}" title="{{ 3000 }}"><img src="img/exvs-sns-image/cost3000_on.png" class="cost-item"></a>
+        <a href="{{ route('posts.index', ['category_id'=>1]) }}" title="{{ 3000 }}" class="cost-item cost-3000">cost 3000</a>
       </li>
       <li>
-        <a href="{{ route('posts.index', ['category_id'=>2]) }}" title="{{ 2500 }}"><img src="img/exvs-sns-image/cost2500_on.png" class="cost-item"></a>
+        <a href="{{ route('posts.index', ['category_id'=>2]) }}" title="{{ 2500 }}" class="cost-item cost-2500">cost 2500</a>
       </li>
       <li>
-        <a href="{{ route('posts.index', ['category_id'=>3]) }}" title="{{ 2000 }}"><img src="img/exvs-sns-image/cost2000_on.png" class="cost-item"></a>
+        <a href="{{ route('posts.index', ['category_id'=>3]) }}" title="{{ 2000 }}" class="cost-item cost-2000">cost 2000</a>
       </li>
       <li>
-        <a href="{{ route('posts.index', ['category_id'=>4]) }}" title="{{ 1500 }}"><img src="img/exvs-sns-image/cost1500_on.png" class="cost-item"></a>
+        <a href="{{ route('posts.index', ['category_id'=>4]) }}" title="{{ 1500 }}" class="cost-item cost-1500">cost 1500</a>
       </li>
     </ul>
   </div>
@@ -33,7 +33,7 @@
   </button>
 </div>
 @endif
-<div class="card-wrapper">
+<div class="mt-4">
   <div class="container">
     @if ($posts->total() === 0)
     <h5>投稿はありません</h5>
@@ -45,7 +45,7 @@
     @include('posts.index_card')
     @endforeach
   </div>
-  <div class="d-flex justify-content-center mb-5">
+  <div class="d-flex justify-content-center mb-5 mt-3">
     {{ $posts->appends(['category_id' => $category_id])->links() }}
   </div>
 </div>

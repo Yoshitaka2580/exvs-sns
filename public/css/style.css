@@ -3,11 +3,6 @@
 body {
   font-family: "Lato";
   padding: 0;
-  background-image: url(../img/exvs-sns-image/bg_black.jpg);
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  color: #fff;
 }
 
 .container {
@@ -16,27 +11,15 @@ body {
 
 a {
   display: inline-block;
-  color: #fff;
+  color: #495057;
 }
 
 p {
   margin-bottom: 0;
 }
 
-a:hover {
-  color:#DD2C00;
-}
-
 .btn {
   margin:0;
-}
-
-.btn-backred:hover {
-  color: #212121;
-}
-
-.btn:hover {
-  color: rgba(255,255,255,.75);
 }
 
 .card-text-p {
@@ -45,7 +28,7 @@ a:hover {
 
 /* --- Nabar Head--- */
 .navbar{
-  background-color: #212121;
+  background-color: #464c56;
   z-index: 100;
   position: fixed;
   top: 0;
@@ -55,11 +38,17 @@ a:hover {
 
 .navbar-home {
   font-size: 20px;
+  color: #fff;
 }
 
 .navbar-home:hover {
-  color: #DD2C00;
-  text-decoration: none;  
+  color: #fff;
+}
+
+.tag-form {
+  margin-top: 0;
+  margin-bottom:0;
+  width: 400px;
 }
 
 .nav-item {
@@ -69,12 +58,6 @@ a:hover {
 
 .nav-item:nth-child(2) {
   margin-left: 10px;
-}
-
-.tag-form {
-  margin-top: 0;
-  margin-bottom:0;
-  width: 400px;
 }
 
 .red.lighten-3 {
@@ -88,6 +71,8 @@ a:hover {
 /* --- Navbar Cost --- */
 .cost-wrapper {
   padding-top: 95px;
+  padding-bottom: 10px;
+  background-color: #f2f2f2;
 }
 
 .cost-category {
@@ -96,21 +81,46 @@ a:hover {
 }
 
 .cost-item {
-  width: 200px;
+  width: 150px;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 .cost-item:hover {
   opacity: 0.7;
 }
 
-.cost-link {
-  margin-left: 25px;
-  font-size: 25px;
-  color: #fff;
+.cost-all {
+  border: 1px solid #0288D1;
+  background-color: #E1F5FE;
+  color: #0288D1;
 }
 
-.cost-link:first-child {
-  margin-left: 0;
+.cost-3000 {
+  border: 1px solid #FF3D00;
+  background-color:#FFCCBC;
+  color: #FF3D00;
+}
+
+.cost-2500 {
+  border: 1px solid #FF6D00;
+  background-color:#FFE0B2;
+  color: #FF6D00;
+}
+
+.cost-2000 {
+  border: 1px solid #FBC02D;
+  background-color:#FFF9C4;
+  color: #FBC02D;
+}
+
+.cost-1500 {
+  border: 1px solid #00C853;
+  background-color:#E8F5E9;
+  color: #00C853;
 }
 
 /* --- HOME --- */
@@ -146,11 +156,7 @@ a:hover {
   text-transform: uppercase;
   text-align: center;
   font-weight: normal;
-  color: #212121;
-}
-
-.btn-about {
-  background-color: #fff;
+  color: ;
 }
 
 .btn-about:hover {
@@ -187,7 +193,7 @@ a:hover {
 }
 
 .social-item {
-  color: #212121;
+  color: ;
   height: 42px;
   width: 42px;
   font-size: 25px;
@@ -208,8 +214,8 @@ a:hover {
 }
 
 .card {
-  background-color: #212121;
-  border: 2px solid#DD2C00;
+  background-color: #f2f2f2;
+  border: 1px solid#464c56;
   padding: 15px;
 }
 
@@ -246,10 +252,7 @@ a:hover {
 }
 
 .card-created {
-  margin-bottom: 0;
   font-size: .9rem;
-  font-weight: 400;
-  color:#fff;
   margin-left: auto;
 }
 
@@ -257,9 +260,15 @@ a:hover {
   color: grey;
 }
 
+.card-cost {
+  border: 1px solid #ddd;
+  padding: 3px;
+  background-color: #FFEE58;
+}
+
 .tag-hashtag {
   padding: 3px;
-  background-color:#DD2C00;
+  background-color: #d5e9f7;
   border-radius: 5px;
   font-size: 14px;
 }
@@ -274,10 +283,13 @@ a:hover {
   font-weight: bold;
 }
 
+.index-card-title {
+  color: rgb(17, 126, 198);
+}
 .btn-like-comment {
   padding: 0;
   border: none;
-  background-color: #212121;
+  background-color: ;
   font-size: 15px;
 }
 
@@ -316,22 +328,11 @@ a:hover {
 .form-alert {
   color: #DD2C00;
 }
-.btn-back {
-  background-color:#fff;
-  color: #212121;
-}
-
-.btn-back:hover {
-  color: #212121;
-}
 
 .btn-submit {
   background-color:#DD2C00;
+  color: #fff;
   
-}
-
-.btn-submit:hover {
-  color: rgba(255,255,255,.75);
 }
 
 .form-btn {
@@ -357,7 +358,6 @@ textarea {
 
 .comment-user {
   margin-left: 15px;
-  color:#DD2C00;
   font-weight: bold;
 }
 
@@ -399,7 +399,6 @@ textarea {
 /* --- tags show ---- */
 .card-title-tag {
   text-align: center;
-  color:#DD2C00;
   font-weight: bold;
   padding-top: 10px;
 }
@@ -418,18 +417,6 @@ textarea {
 
 .login-btn {
   text-align: center;
-}
-
-.pagination .page-item .page-link {
-  color: #fff;
-}
-
-.pagination .page-item .page-link:hover {
-  background-color: #212121;
-}
-
-.modal-body {
-  color: #212121;
 }
 
 .cost-name {

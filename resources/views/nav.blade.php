@@ -3,7 +3,7 @@
     <a class="navbar-home" href="/posts"><i class="fab fa-playstation"></i>MAXBOOSTON MATCHING</a>
     @auth
     <form action="/search" method="get" class="input-group md-form form-sm form-2 pl-0 tag-form">
-      <input type="search" name="search" required class="form-control my-0 py-1 red-border" placeholder="キーワードで検索[タグ名]" style="color: #fff;">
+      <input type="search" name="search" required class="form-control input-search my-0 py-1 red-border" placeholder="キーワードで検索[タグ名]" style="color: #fff;">
       <button type="submit" class="input-group-text red lighten-3"><i class="fas fa-search text-white"></i></button>
     </form>
     @endauth
@@ -35,7 +35,7 @@
       <!-- Dropdown -->
       <li class="nav-item dropdown">
       <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false" style="color: #fff;">
+        aria-haspopup="true" aria-expanded="false">
         @if(!empty(Auth::user()->thumbnail))
           <img src="/storage/user/{{ Auth::user()->thumbnail }}" class="editThumbnail">
         @else

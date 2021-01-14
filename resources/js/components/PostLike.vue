@@ -1,10 +1,10 @@
 <template>
-    <button type="button" class="btn btn-like-comment">
-    <i class="fas fa-star"
-      :class="{'text-warning':this.isLikedBy, 'animated wobble slow':this.gotToLike}"
-      @click="clickLike" 
-    ></i>{{ countLikes }}
-    </button>
+    <a class="btn-like-comment">
+      <i class="fas fa-star"
+        :class="{'text-warning':this.isLikedBy, 'animated wobble slow':this.gotToLike}"
+        @click="clickLike" 
+      ></i>{{ countLikes }}
+    </a>
 </template>
 
 <script>
