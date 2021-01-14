@@ -80,7 +80,7 @@
         endpoint="{{ route('posts.like', ['post' => $post]) }}"
       >
       </post-like>
-      <a class="btn-like-comment" onclick="location.href='{{ route('posts.show', ['post' => $post]) }}'">
+      <a class="btn-like-comment" href="{{ route('posts.show', ['post' => $post]) }}">
         <i class="fas fa-comment-dots"></i> {{ $post->comments->count() }}
       </a>
       <p class="card-created">{{ $post->created_at->format('Y/m/d H:i') }}</p>
