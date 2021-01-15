@@ -277,6 +277,11 @@ textarea {
   font-size: 12px;
 }
 
+.card-mypage {
+  display: flex;
+  flex-direction: row;
+}
+
 .user-thumbnail {
   width: 20px;
   height: 20px;
@@ -426,9 +431,9 @@ textarea {
   font-size: 150px;
 }
 
-.card-mypage {
-  display: flex;
-  flex-direction: row;
+.my-textarea {
+  width: 650px;
+  margin: 0 auto;
 }
 /* --- tags show ---- */
 .card-title-tag {

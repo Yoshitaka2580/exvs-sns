@@ -13,7 +13,7 @@
   <h3 class="user-edit">{{ $user->name }}</h3>
 </div>
 <div class="form-group">
-  <textarea class="form-control" name="body" row="12" placeholder="自己紹介">{{ $user->body ?? old('body') }}</textarea>
+  <textarea class="form-control my-textarea" name="body" row="12" placeholder="自己紹介">{{ $user->body ?? old('body') }}</textarea>
 </div>
 <div class="form-group user-edit">
   <label>プロフィール画像</label>
