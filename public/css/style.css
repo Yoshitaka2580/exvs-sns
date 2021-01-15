@@ -22,10 +22,9 @@ p {
   margin:0;
 }
 
-.card-text-p {
-  font-size: 15px;
+textarea {
+  resize: none;
 }
-
 /* --- Nabar Head--- */
 .navbar{
   background-color: #464c56;
@@ -56,15 +55,25 @@ p {
   font-size: 15px;
 }
 
+.nav-article {
+  background-color: #0288D1;
+  font-size: 12px;
+  border-radius: 5px;
+  line-height: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
 .nav-item:nth-child(2) {
   margin-left: 10px;
+  color: #fff;
 }
 
-.red.lighten-3 {
-  background-color:#FF1744 !important;
+.search-blue {
+  background-color: #0288D1 !important;
 }
 
-.red.lighten-3:hover {
+.search-blue:hover {
   opacity: 0.7;
 }
 
@@ -172,7 +181,6 @@ p {
   text-transform: uppercase;
   text-align: center;
   font-weight: normal;
-  color: ;
 }
 
 .btn-about:hover {
@@ -209,7 +217,6 @@ p {
 }
 
 .social-item {
-  color: ;
   height: 42px;
   width: 42px;
   font-size: 25px;
@@ -256,6 +263,7 @@ p {
 
 .card-right {
  width: 100%;
+ margin-left: 20px;
 }
 
 .card-score {
@@ -264,12 +272,20 @@ p {
 }
 
 .card-user {
-  font-weight: bold;
+  display: flex;
+  margin-left: auto;
+  font-size: 12px;
 }
 
-.card-created {
-  font-size: .9rem;
-  margin-left: auto;
+.user-thumbnail {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 20%;
+}
+
+.circle-icon {
+  font-size: 20px;
 }
 
 .card-edit-btn {
@@ -279,6 +295,7 @@ p {
 .card-cost {
   border: 1px solid #ddd;
   padding: 3px;
+  font-size: 12px;
   background-color: #FFEE58;
 }
 
@@ -286,7 +303,7 @@ p {
   padding: 3px;
   background-color: #d5e9f7;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   border: 1px solid #b8dbf2;
   box-sizing: border-box;
 }
@@ -299,11 +316,13 @@ p {
 .card-title {
   margin-bottom: 0;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .index-card-title {
   color: rgb(17, 126, 198);
 }
+
 .btn-like-comment {
   padding: 0;
   font-size: 15px;
@@ -322,8 +341,6 @@ p {
 }
 
 
-
-/* --- Dropdown menu --- */
 
 /* --- posts.create--- */
 .card-create {
@@ -348,17 +365,12 @@ p {
 }
 
 .btn-submit {
-  background-color:#FF1744;
+  background-color:#0288D1;
   color: #fff;
-  
 }
 
 .form-btn {
   text-align: center;
-}
-
-textarea {
-  resize: none;
 }
 
 /* --- posts.comment ---*/
@@ -388,10 +400,6 @@ textarea {
   float: right;
 }
 
-.fa-user-circle {
-  font-size: 40px;
-}
-
 /* --- Users.form.--- */
 .user-edit {
   text-align: center;
@@ -402,6 +410,10 @@ textarea {
   height: 40px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.circle-editThumbnail {
+  font-size: 40px;
 }
 
 .mypage-thumbnail {
