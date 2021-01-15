@@ -3,19 +3,12 @@
     <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost">
       {{ $post->category->name }}cost
     </a>
-    <a href="{{ route('users.show', ['name' => $post->user->name]) }}" class= "card-user">
-      @if(!empty($post->user->thumbnail))
-      <img src="/storage/user/{{ $post->user->thumbnail }}" class="editThumbnail">
-      @else
-      <i class="fas fa-user-circle"></i>
-      @endif
-    </a>
   </div>
   <div class="card-right">
     <div class="card-title-btn">
-      <a href="{{ route('users.show', ['name' => $post->user->name]) }}">
-        <h5 class="mb-0">{{ $post->user->name }}</h5>
-      </a>
+      <h3 class="card-title">
+        <a href="{{ route('posts.show', ['post' => $post]) }}" class="index-card-title">{{ $post->title }}</a>
+      </h3>
       @if( Auth::id() === $post->user_id )
         <!-- ドロップダウンメニュー -->
         <div class="ml-auto card-edit-btn">
@@ -60,9 +53,6 @@
         </div>
       @endif
     </div>
-    <h3 class="card-title">
-      <a href="{{ route('posts.show', ['post' => $post]) }}" class="index-card-title">{{ $post->title }}</a>
-    </h3>
     @foreach($post->tags as $tag)
     @if($loop->first)
     @endif
@@ -83,7 +73,20 @@
       <a class="btn-like-comment" href="{{ route('posts.show', ['post' => $post]) }}">
         <i class="fas fa-comment-dots"></i> {{ $post->comments->count() }}
       </a>
-      <p class="card-created">{{ $post->created_at->format('Y/m/d H:i') }}</p>
+
+      <div class="card-user">
+        <a href="{{ route('users.show', ['name' => $post->user->name]) }}">
+          @if(!empty($post->user->thumbnail))
+          <img src="/storage/user/{{ $post->user->thumbnail }}" class="user-thumbnail">
+          @else
+          <i class="fas fa-user-circle circle-icon"></i>
+          @endif
+        </a>
+        <a href="{{ route('users.show', ['name' => $post->user->name]) }}">
+          <p class="ml-1">{{ $post->user->name }}</p>
+        </a>
+        <p class="ml-4">{{ $post->created_at->format('Y/m/d H:i') }}</p>
+      </div>
     </div>
   </div>
 </div>

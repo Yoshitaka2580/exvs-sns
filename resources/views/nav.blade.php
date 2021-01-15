@@ -4,7 +4,7 @@
     @auth
     <form action="/search" method="get" class="input-group md-form form-sm form-2 pl-0 tag-form">
       <input type="search" name="search" required class="form-control input-search my-0 py-1 red-border" placeholder="キーワードで検索[タグ名]" style="color: #fff;">
-      <button type="submit" class="input-group-text red lighten-3"><i class="fas fa-search text-white"></i></button>
+      <button type="submit" class="input-group-text search-blue"><i class="fas fa-search text-white"></i></button>
     </form>
     @endauth
     <ul class="navbar-nav">
@@ -27,7 +27,7 @@
 
       @auth
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('posts.create') }}"><i class="fas fa-pen-alt"></i>投稿する</a>
+        <a class="nav-link nav-article" href="{{ route('posts.create') }}"><i class="fas fa-pen-alt"></i>投稿する</a>
       </li>
       @endauth
 
@@ -39,7 +39,7 @@
         @if(!empty(Auth::user()->thumbnail))
           <img src="/storage/user/{{ Auth::user()->thumbnail }}" class="editThumbnail">
         @else
-          <i class="fas fa-user-circle" style="vertical-align: middle;"></i>
+          <i class="fas fa-user-circle circle-editThumbnail" style="vertical-align: middle;"></i>
         @endif
       </a>
       <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
