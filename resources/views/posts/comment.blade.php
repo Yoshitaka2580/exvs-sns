@@ -7,10 +7,10 @@
     @if(!empty($comment->user->thumbnail))
     <img src="/storage/user/{{ $comment->user->thumbnail }}" class="editThumbnail">
     @else
-    <i class="fas fa-user-circle"></i>
+    <i class="fas fa-user-circle circle-editThumbnail"></i>
     @endif
     </a>
-    <a href="{{ route('users.show', ['name' => $comment->user->name]) }}" class="user-name comment-user">{{ $comment->atsign }}</a>
+    <a href="{{ route('users.show', ['name' => $comment->user->name]) }}" class="comment-user">{{ $comment->atsign }}</a>
     @if( Auth::id() === $comment->user_id )
     <!-- ドロップダウンメニュー -->
     <div class="ml-auto card-text">
@@ -59,7 +59,7 @@
       @if(!empty($post->user->thumbnail))
       <img src="/storage/user/{{ $post->user->thumbnail }}" class="editThumbnail">
       @else
-      <i class="fas fa-user-circle"></i>
+      <i class="fas fa-user-circle circle-editThumbnail"></i>
       @endif
     </a>
     <form method="POST" action="{{ route('comment.store', ['post' => $post]) }}" style="width: 100%;" class="ml-2">
