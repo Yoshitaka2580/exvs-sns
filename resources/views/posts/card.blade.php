@@ -21,7 +21,7 @@
         <div class="ml-auto card-edit-btn">
           <div class="dropdown">
             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-check"></i>
+              <i class="fas fa-edit"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="{{ route('posts.edit', ['post' => $post]) }}">

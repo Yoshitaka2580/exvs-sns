@@ -51,10 +51,6 @@
         <button form="logout-button" class="dropdown-item" type="submit">
           ログアウト
         </button>
-        <div class="dropdown-divider"></div>
-        <button onclick="location.href='http://spread-exvsmbon.com/'" class="dropdown-item">
-          マキシブーストオン攻略サイトはこちらへ
-        </button>
       </div>
     </li>
     <form id="logout-button" method="POST" action="{{ route('logout') }}">

@@ -14,7 +14,7 @@
         <div class="ml-auto card-edit-btn">
           <div class="dropdown">
             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-check"></i>
+              <i class="fas fa-edit"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="{{ route('posts.edit', ['post' => $post]) }}">
@@ -74,12 +74,12 @@
         <i class="fas fa-comment-dots"></i> {{ $post->comments->count() }}
       </a>
 
-      <div class="card-user">
+      <div class="card-user ml-auto">
         <a href="{{ route('users.show', ['name' => $post->user->name]) }}">
           @if(!empty($post->user->thumbnail))
           <img src="/storage/user/{{ $post->user->thumbnail }}" class="user-thumbnail">
           @else
-          <i class="fas fa-user-circle circle-icon"></i>
+          <i class="fas fa-user-circle user-icon"></i>
           @endif
         </a>
         <a href="{{ route('users.show', ['name' => $post->user->name]) }}">
