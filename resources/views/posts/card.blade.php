@@ -1,7 +1,7 @@
 <div class="card card-details">
   <div class="card-left">
     <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost">
-      {{ $post->category->name }}cost
+      {{ $post->category->name }}コスト
     </a>
     <a href="{{ route('users.show', ['name' => $post->user->name]) }}" class= "card-user">
       @if(!empty($post->user->thumbnail))
@@ -60,12 +60,12 @@
         </div>
       @endif
     </div>
-    <h3 class="card-title">
+    <h3 class="card-title detailes-title">
         {{ $post->title }}
     </h3>
-    <div class="card-body">
-      <p>{{ $post->body }}</p>
-    </div>
+    <p class="card-text">
+      {{ $post->body }}
+    </ｐ>
     <div class="card-score">
       <post-like
         :initial-is-liked-by='@json($post->isLikedBy(Auth::user()))'

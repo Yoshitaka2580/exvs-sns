@@ -1,7 +1,7 @@
 <div class="card card-details">
-  <div class="card-left">
+  <div class="card-left" style="width: 80px;">
     <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost">
-      {{ $post->category->name }}cost
+      {{ $post->category->name }}コスト
     </a>
   </div>
   <div class="card-right">
