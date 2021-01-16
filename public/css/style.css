@@ -291,6 +291,7 @@ textarea {
   display: flex;
   font-size: 12px;
   font-weight: bold;
+  line-height: 25px;
 }
 
 .card-mypage {
@@ -299,14 +300,14 @@ textarea {
 }
 
 .user-thumbnail {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   object-fit: cover;
-  border-radius: 20%;
+  border-radius: 5px;
 }
 
 .user-icon {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .card-edit-btn {
