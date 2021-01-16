@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'パスワード再設定')
+@section('title', 'パスワード再設定 | VS-Conn')
 
 @section('content')
 @include('nav')

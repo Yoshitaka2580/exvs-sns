@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $tag->hashtag)
+@section('title', $tag->hashtag | VS-Conn)
 
 @section('content')
 @include('nav')

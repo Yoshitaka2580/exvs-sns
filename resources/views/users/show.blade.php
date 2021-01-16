@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $user->name . 'さん')
+@section('title', $user->name . 'さん | VS-Conn')
 
 @section('content')
 @include('nav')
