@@ -26,6 +26,10 @@ p {
 textarea {
   resize: none;
 }
+
+.empty-text {
+  color: #c0c0c0;
+}
 /* --- Nabar Head--- */
 .navbar{
   background-color: #464c56;
@@ -77,6 +81,18 @@ textarea {
 .search-blue:hover {
   opacity: 0.7;
 }
+
+.editThumbnail {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.circle-editThumbnail {
+  font-size: 40px;
+}
+
 
 /* --- Navbar Cost --- */
 .cost-wrapper {
@@ -277,6 +293,11 @@ textarea {
   font-size: 12px;
 }
 
+.card-mypage {
+  display: flex;
+  flex-direction: row;
+}
+
 .user-thumbnail {
   width: 20px;
   height: 20px;
@@ -293,7 +314,7 @@ textarea {
 }
 
 .card-cost {
-  border: 1px solid #ddd;
+  border: 1px solid #c0c0c0;
   padding: 3px;
   font-size: 12px;
   background-color: #FFEE58;
@@ -382,7 +403,7 @@ textarea {
 }
 .comment-text {
   display: flex;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #c0c0c0;
   margin-top: 10px;
 }
 
@@ -400,20 +421,9 @@ textarea {
   float: right;
 }
 
-/* --- Users.form.--- */
+/* --- ユーザーページ--- */
 .user-edit {
   text-align: center;
-}
-
-.editThumbnail {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.circle-editThumbnail {
-  font-size: 40px;
 }
 
 .mypage-thumbnail {
@@ -422,14 +432,30 @@ textarea {
   object-fit: cover;
 }
 
-.mypage-editThumbnail {
+.my-textarea {
+  width: 650px;
+  margin: 0 auto;
+}
+
+.mypage-user-icon {
   font-size: 150px;
 }
 
-.card-mypage {
-  display: flex;
-  flex-direction: row;
+.mypage-user {
+  font-size: 20px;
+  font-weight: bold;
 }
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:focus {
+  background-color: #464c56;
+  color: #fff;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  background-color: #464c56;
+  color: #fff;
+}
+
 /* --- tags show ---- */
 .card-title-tag {
   text-align: center;
@@ -457,16 +483,6 @@ textarea {
   font-size: 15px;
 }
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:focus {
-  background-color: #464c56;
-  color: #fff;
-}
-
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  background-color: #464c56;
-  color: #fff;
-}
-
 .pagination .page-item .page-link {
-  border: 1px solid #ddd;
+  border: 1px solid #c0c0c0;
 }

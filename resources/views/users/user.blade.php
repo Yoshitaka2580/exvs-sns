@@ -10,15 +10,15 @@
   </div>
   <div class="card-right ml-3">
     <h4 class="mb-0">
-      <a href="{{ route('users.show', ['name' => $user->name]) }}" class="card-user">
+      <a href="{{ route('users.show', ['name' => $user->name]) }}" class="mypage-user">
         {{ $user->name }}
       </a>
     </h4>
-    <p class="card-text mt-3">＜自己紹介＞</p>
+    <p class="mt-3">＜自己紹介＞</p>
     @empty($user->body)
-    <p class="card-text" style="color: gray;">記入がありません</p>
+    <p class="empty-text">記入がありません</p>
     @else
-    <p class="card-text">{{ $user->body }}</p>
+    <p>{{ $user->body }}</p>
     @endempty
   </div>
   @if( Auth::id() === $user->id )

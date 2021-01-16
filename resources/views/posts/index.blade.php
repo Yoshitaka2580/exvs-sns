@@ -35,11 +35,11 @@
 @endif
 <div class="mt-4">
   <div class="container">
-    @if ($posts->total() === 0)
+    @empty($posts->total())
     <h5>投稿はありません</h5>
     @else
     <h5>{{ $posts->total() }}件の投稿</h5>
-    @endif
+    @endempty
 
     @foreach($posts as $post)
     @include('posts.index_card')
