@@ -27,7 +27,11 @@
   
 <div class="form-group">
   <p class="name-label">備考<span class="form-alert">※</span></p>
-  <textarea name="body" class="form-control" rows="7" placeholder="ここに詳細内容書いてください。" required>
-    {{ $post->body ?? old('body') }}
+  <textarea 
+    name="body" 
+    class="form-control" 
+    rows="6" 
+    placeholder="ここに詳細内容書いてください。" 
+    required>{{ $post->body ?? old('body') }}
   </textarea>
 </div>
