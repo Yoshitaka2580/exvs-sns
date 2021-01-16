@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'ログインフォーム')
+@section('title', 'ログイン | VS-Conn')
 
 @section('content')
 @include('nav')

@@ -195,7 +195,6 @@ textarea {
 .top-title {
   margin: 0 auto;
   letter-spacing: 3px;
-  text-transform: uppercase;
   text-align: center;
   font-weight: normal;
 }
@@ -204,7 +203,6 @@ textarea {
   background-color: #c0c0c0;
 }
 
-/* --- My Profile --- */
 .about-container {
   padding: 60px 0 70px 0;
 }
@@ -292,6 +290,7 @@ textarea {
 .card-user {
   display: flex;
   font-size: 12px;
+  font-weight: bold;
 }
 
 .card-mypage {

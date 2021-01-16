@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'VSマッチング')
+@section('title', 'VS-Conn')
 
 @section('content')
 @include('nav')
@@ -10,7 +10,7 @@
     <img class="top-background-img" src="{{ asset('img/jeshoots-com-eCktzGjC-iU-unsplash.jpg') }}">
     <div class="container top-container">
       <div class="top-titlebox">
-        <h1 class="top-title">maxbooston<br>matching</h1>
+        <h1 class="top-title">VS-Conn</h1>
       </div>
       <a href="/login/guest" class="btn btn-secondary mt-2">ゲストユーザーでログイン</a>
   </div>

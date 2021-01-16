@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $post->title .'の記事詳細')
+@section('title', $post->title .'| VS-Conn')
 
 @section('content')
   @include('nav')

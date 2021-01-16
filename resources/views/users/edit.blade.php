@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $user->name . 'のプロフィール編集')
+@section('title', $user->name . 'のプロフィール編集 | VS-Conn')
 
 @section('content')
 @include('nav')
