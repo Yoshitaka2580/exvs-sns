@@ -1,20 +1,20 @@
 <div class="card card-mypage">
   <div class="card-left">
     <a href="{{ route('users.show', ['name' => $person->name]) }}" class="card-user">
-      @if(!empty($person->thumbnail))
+      @if(($person->thumbnail))
       <img src="/storage/user/{{ $person->thumbnail }}" class="editThumbnail">
       @else
       <i class="fas fa-user-circle fa-3x"></i>
       @endif
     </a>
   </div>
-  <div class="card-right ml-3">
-    <h4 class="mb-0">
-      <a href="{{ route('users.show', ['name' => $person->name]) }}" class="card-user">
+  <div class="card-right ml-2">
+    <h4 class="mt-0">
+      <a href="{{ route('users.show', ['name' => $person->name]) }}" class="mypage-user">
         {{ $person->name }}
       </a>
     </h4>
-    <p class="card-text">{{ $person->body }}</p>
+    <p>{{ $person->body }}</p>
   </div>
   @if( Auth::id() !== $person->id )
     <follow-button

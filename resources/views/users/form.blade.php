@@ -3,7 +3,7 @@
 @if(!empty($user->thumbnail))
   <img src="/storage/user/{{ $user->thumbnail }}" class="mypage-thumbnail">
 @else
-  <i class="fas fa-user mypage-editThumbnail"></i>
+  <i class="fas fa-user mypage-user-icon"></i>
   <p class="mt-2">画像なし</p>
 @endif
 </div>
