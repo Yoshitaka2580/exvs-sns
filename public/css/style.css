@@ -554,6 +554,11 @@ textarea {
   margin: 0 auto;
 }
 
+.login-form-title {
+  text-align: center;
+  font-weight: bold;
+}
+
 .login-btn {
   text-align: center;
 }

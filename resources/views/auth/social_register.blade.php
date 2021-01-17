@@ -7,8 +7,8 @@
 <div class="card-wrapper">
   <div class="card login-form">
     @include('error_list')
-    <div class="card-text">
-      <h2 class="card-title pb-1">新規登録</h2>
+    <div class="login-form-container">
+      <h2 class="login-form-title">新規登録</h2>
       <form method="POST" action="{{ route('register.{provider}', ['provider' => $provider]) }}">
         @csrf
         <input type="hidden" name="token" value="{{ $token }}">
