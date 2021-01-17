@@ -13,9 +13,9 @@
         @foreach($post->tags as $tag)
         @if($loop->first)
         @endif
-          <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="btn-backred tag-hashtag ml-1">
-            {{ $tag->hashtag }}
-          </a>
+        <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="btn-backred tag-hashtag ml-1">
+          {{ $tag->hashtag }}
+        </a>
         @if($loop->last)
         @endif
         @endforeach
