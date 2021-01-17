@@ -263,20 +263,6 @@ textarea {
   flex-direction: row;
 }
 
-.card-main:first-child {
-  margin-top: 0;
-}
-
-.card-details {
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-}
-
-.card-details:first-child {
-  margin-top: 0;
-}
-
 .card-right {
  width: 100%;
  margin-left: 20px;
@@ -284,13 +270,10 @@ textarea {
 
 .card-score {
   display: flex;
-  padding: 0;
 }
 
 .card-user {
   display: flex;
-  font-size: 12px;
-  font-weight: bold;
   line-height: 25px;
 }
 
@@ -319,6 +302,7 @@ textarea {
   padding: 3px;
   font-size: 12px;
   background-color: #FFEE58;
+  border-radius: 5px;
 }
 
 .tag-hashtag {
@@ -345,25 +329,21 @@ textarea {
   color: rgb(17, 126, 198);
 }
 
-.btn-like-comment {
+.btn-clip-comment {
   padding: 0;
   font-size: 15px;
 }
 
-.btn-like-comment {
+.btn-clip-comment {
   margin-left: 20px;
 }
 
-.btn-like-comment:first-child {
+.btn-clip-comment:first-child {
   margin-left: 0;
 }
 
-.fa-comment-dots, .fa-star {
+.fa-comment-dots, .fa-paperclip {
   margin-right: 10px;
-}
-
-.detailes-title {
-  font-size: 24px;
 }
 
 .card-text {
@@ -371,6 +351,66 @@ textarea {
   font-size: 16px;
 }
 
+.card-score-name {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* 詳細画面 */
+.card-details {
+  position: relative;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.detailes-title {
+  font-size: 24px;
+}
+
+.card-detailsHead {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  font-weight: 400;
+  background-color: #f2f2f2;
+}
+
+.boardCountlist {
+  padding: 0;
+  background-color: #fff;
+  display: flex;
+  margin-right: 15px;
+}
+
+.mobile-suit {
+  margin-top: 15px;
+}
+
+.detailes-right {
+  margin-left: auto;
+  display: flex;
+  height: 50px;
+}
+
+.boardCountlist-item {
+  margin: auto 10px;
+  border-left: 1px solid #ddd;
+  padding-left: 8px;
+  font-size: 12px;
+}
+
+.boardCountlist-item:first-child {
+  border-left: 0;
+  padding: 0;
+}
+
+.boardCountlist-value {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+.card-detaileText {
+  padding: 15px;
+} 
 /*  --- posts.form--- */
 .name-label {
   display: block;

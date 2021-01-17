@@ -1,6 +1,6 @@
 <template>
     <a class="btn-like-comment">
-      <i class="fas fa-star"
+      <i class="fas fa-paperclip"
         :class="{'text-warning':this.isLikedBy, 'animated wobble slow':this.gotToLike}"
         @click="clickLike" 
       ></i>{{ countLikes }}
@@ -60,5 +60,4 @@
       },
     },
   }
-  
 </script>
