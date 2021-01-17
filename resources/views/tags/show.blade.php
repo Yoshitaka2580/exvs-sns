@@ -6,7 +6,7 @@
 @include('nav')
 <div class="card-wrapper">
   <div class="container">
-    <div class="card">
+    <div class="card card-hashtag">
       <h2 class="card-title-tag">{{ $tag->hashtag }}</h2>
       @if ($tag->posts->count() === 0)
       <p class="tag-count">
