@@ -529,3 +529,8 @@ textarea {
 .pagination .page-item .page-link {
   border: 1px solid #c0c0c0;
 }
+
+.card-hashtag {
+  border: 1px solid #b8dbf2;
+  background-color: #d5e9f7
+}
