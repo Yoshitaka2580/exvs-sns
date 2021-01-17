@@ -301,6 +301,7 @@ textarea {
   border: 1px solid #c0c0c0;
   padding: 3px;
   font-size: 12px;
+  font-weight: bold;
   background-color: #FFEE58;
   border-radius: 5px;
 }
