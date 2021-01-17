@@ -1,4 +1,4 @@
-<div class="card card-details">
+<div class="card card-main">
   <div class="card-left" style="width: 80px;">
     <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost">
       {{ $post->category->name }}コスト
@@ -70,7 +70,7 @@
         endpoint="{{ route('posts.like', ['post' => $post]) }}"
       >
       </post-like>
-      <a class="btn-like-comment" href="{{ route('posts.show', ['post' => $post]) }}">
+      <a class="btn-clip-comment" href="{{ route('posts.show', ['post' => $post]) }}">
         <i class="fas fa-comment-dots"></i> {{ $post->comments->count() }}
       </a>
 
@@ -83,9 +83,9 @@
           @endif
         </a>
         <a href="{{ route('users.show', ['name' => $post->user->name]) }}">
-          <p class="ml-1">{{ $post->user->name }}</p>
+          <p class="card-score-name">{{ $post->user->name }}</p>
         </a>
-        <p class="ml-4">{{ $post->created_at->format('Y/m/d H:i') }}</p>
+        <p class="ml-2">{{ $post->created_at->format('Y/m/d H:i') }}</p>
       </div>
     </div>
   </div>

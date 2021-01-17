@@ -8,7 +8,7 @@
   <li class="nav-item">
     <a class="nav-link {{ $hasLikes ? 'active' : '' }}"
        href="{{ route('users.likes', ['name' => $user->name]) }}">
-      お気に入り({{ $user->likes->count() }})
+      クリップ({{ $user->likes->count() }})
     </a>
   </li>
   <li class="nav-item">

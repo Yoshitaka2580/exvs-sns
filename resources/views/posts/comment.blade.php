@@ -16,7 +16,7 @@
     <div class="ml-auto card-text">
       <div class="dropdown">
         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-trash-alt" style="color: #747373;"></i>
+        <i class="fas fa-trash-alt"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $comment->id }}">
