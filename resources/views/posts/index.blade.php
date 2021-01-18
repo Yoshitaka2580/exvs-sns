@@ -26,7 +26,7 @@
   </div>
 </nav>
 @if (session('flash_message'))
-<div class="flash_message card-text text-center alert alert-danger" role="alert">
+<div class="flash_message text-center alert alert-danger" role="alert">
   {{ session('flash_message') }}
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
