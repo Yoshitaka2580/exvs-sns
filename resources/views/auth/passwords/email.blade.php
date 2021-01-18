@@ -6,7 +6,7 @@
 @include('nav')
 <div class="card-wrapper">
   <div class="card login-form">
-    <h2 class="card-title pb-1">パスワード再設定</h2>
+    <h2 class="login-form-title">パスワード再設定</h2>
     @include('error_list')
     @if (session('status'))
       <div class="card-text alert alert-success">

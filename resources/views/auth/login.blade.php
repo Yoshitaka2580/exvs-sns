@@ -7,15 +7,9 @@
 <div class="card-wrapper">
   <div class="card login-form">
     @include('error_list')
-    <div class="card-text">
-      <h2 class="card-title pb-1">ログイン</h2>
+    <div class="login-form-container">
+      <h2 class="login-form-title">ログイン</h2>
       <a href="/login/guest" class="btn btn-block btn-secondary mt-2">ゲストユーザーでログイン</a>
-      <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger mt-2">
-        <i class="fab fa-google mr-1"></i>Googleでログイン
-      </a>
-      <a href="{{ route('login.{provider}', ['provider' => 'facebook']) }}" class="btn btn-block btn-primary mt-2">
-        <i class="fab fa-facebook-f mr-1"></i>Facebookでログイン
-      </a>
       <form action="{{ route('login') }}" method="POST" class="mt-3">
         @csrf
         <div class="md-form">
@@ -41,6 +35,13 @@
           </div>
         </div>
       </form>
+    </div>
+    <div class="social-list">
+      <p class="top-messageText">SNSアカウントでログイン</p>
+      <div class="mt-4">
+        <a href="{{ route('login.{provider}', ['provider' => 'facebook']) }}" class="social-item btn-primary"><i class="fab fa-facebook-f"></i></a>
+        <a href="{{ route('login.{provider}', ['provider' => 'google']) }} " class="social-item btn-danger ml-2"><i class="fab fa-google"></i></a>
+      </div> 
     </div>
   </div>
 </div>

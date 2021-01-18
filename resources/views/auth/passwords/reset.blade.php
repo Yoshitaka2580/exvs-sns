@@ -6,7 +6,7 @@
 @include('nav')
 <div class="card-wrapper">
   <div class="card login-form">
-    <h2 class="card-title pb-1">新しいパスワードを設定</h2>
+    <h2 class="login-form-title">新しいパスワードを設定</h2>
     @include('error_list')
     <div class="card-text">
       <form method="POST" action="{{ route('password.update') }}">
