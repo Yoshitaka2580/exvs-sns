@@ -28,6 +28,7 @@
           </div> 
         </div>
       </div>
+    </div>
   </div>
 
   <div class="wrapper about-wrapper" id="about">
@@ -104,8 +105,5 @@
     </div>
   </div>
 </main>
-
-<footer>
-
-</footer>
+@include('footer')
 @endsection
