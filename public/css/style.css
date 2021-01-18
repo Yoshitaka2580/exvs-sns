@@ -495,7 +495,7 @@ textarea {
 /* --- posts.comment ---*/
 .card-comment {
   float: right;
-  width: 75%;
+  width: 600px;
   position: relative;
   margin-top: 20px;
 }
