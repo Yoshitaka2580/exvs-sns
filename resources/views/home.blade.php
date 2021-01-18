@@ -10,10 +10,10 @@
     <img class="top-background-img" src="{{ asset('img/jeshoots-com-eCktzGjC-iU-unsplash.jpg') }}">
     <div class="container top-container">
       <div class="top-messageBox">
-        <h1 class="top-title">VS-Conn</h1>
+        <h1 class="top-title">VS-Connect</h1>
         <p class="top-titleMessage">全国のプレイヤーと繋がって一緒に強くなろう！</p>
         <div class="top-messageBorder"></div>
-        <p class="top-messageText">VS-Connは機動戦士ガンダム マキシブーストONのコミュニティサイトです</p>
+        <p class="top-messageText">VS-Connectは「機動戦士ガンダム マキシブーストONのコミュニティサイト」</p>
       </div>
       <div class="top-login">
         <a href="/login/guest" class="btn btn-secondary mt-2">ゲストユーザーでログイン</a>
@@ -30,19 +30,62 @@
       </div>
   </div>
 
-  <div class="about-wrapper" id="about">
-    <div class="container about-container">
-      <h2 class="about-title">Profile</h2>
+  <div class="wrapper about-wrapper" id="about">
+    <div class="container">
+      <h2 class="contant-title">VS-Connectとは</h2>
       <div class="about-content">
-        <a class="profile-img">
-          <img src="{{ asset('img/1045048.jpg') }}" class="profile-img-thumb">
-        </a>
-        <div class="profile-text">
-          <h4 class="profile-name">Yoshitaka Nakashima</h4>
-          <p class="mt-4">よろしくお願いします。</p>
-        </div>
+        <p class="about-text">Playstation4ソフト「機動戦士ガンダム マキシブーストON」のコミュニティサイトです。<br>
+      一緒にタッグを組んだり、ルームを結成して仲間を作りマキブオンを楽しみましょう。
+        </p>
       </div>
     </div>
   </div>
+
+  <!-- <div class="wrapper tutorial-wrapper">
+    <div class="container">
+    <h2 class="contant-title">VS-Connectの使い方</h2>
+    <div class="tutorials">
+      <div class="tutorial">
+        <div class="row">
+          <div class="col-2">.
+            <img src="{{ asset('img/記事アイコン1.jpeg') }}" class="">
+          </div>
+          <div class="col-10">.
+            <h3></h3>
+            <p></p>
+          </div>
+          <div class="col-2">.
+            <img src="{{ asset('img/検索アイコン1.jpeg') }}" class="">
+          </div>
+          <div class="col-10">.
+            <h3></h3>
+            <p></p>
+          </div>
+          <div class="col-2">.
+            <img src="{{ asset('img/コミュニケーションアイコン3.jpeg') }}" class="">
+          </div>
+          <div class="col-10">.
+            <h3></h3>
+            <p></p>
+          </div>
+          <div class="col-2">.
+            <img src="{{ asset('img/フリーのクリップアイコン.jpeg') }}" class="">
+          </div>
+          <div class="col-10">.
+            <h3></h3>
+            <p></p>
+          </div>
+          <div class="col-2">.
+            <img src="{{ asset('img/登録アイコン.jpeg') }}" class="">
+          </div>
+          <div class="col-10">.
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div> -->
 </main>
 @endsection
