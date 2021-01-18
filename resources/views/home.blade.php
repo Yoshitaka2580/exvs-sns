@@ -13,7 +13,7 @@
         <h1 class="top-title">VS-Connect</h1>
         <p class="top-titleMessage">全国のプレイヤーと繋がって一緒に強くなろう！</p>
         <div class="top-messageBorder"></div>
-        <p class="top-messageText">VS-Connectは「機動戦士ガンダム マキシブーストONのコミュニティサイト」</p>
+        <p class="top-messageText">VS-Connectは機動戦士ガンダム マキシブーストONのコミュニティサイト</p>
       </div>
       <div class="top-login">
         <a href="/login/guest" class="btn btn-secondary mt-2">ゲストユーザーでログイン</a>
@@ -34,58 +34,78 @@
     <div class="container">
       <h2 class="contant-title">VS-Connectとは</h2>
       <div class="about-content">
-        <p class="about-text">Playstation4ソフト「機動戦士ガンダム マキシブーストON」のコミュニティサイトです。<br>
-      一緒にタッグを組んだり、ルームを結成して仲間を作りマキブオンを楽しみましょう。
+        <p class="about-text">PlayStation4ソフト「機動戦士ガンダム マキシブーストON」のコミュニティサイトです。<br>
+      一緒にタッグを組んだり、ルームを結成する仲間を集めてマキブオンを楽しみましょう。
         </p>
       </div>
     </div>
   </div>
 
-  <!-- <div class="wrapper tutorial-wrapper">
+  <div class="wrapper tutorial-wrapper">
     <div class="container">
-    <h2 class="contant-title">VS-Connectの使い方</h2>
-    <div class="tutorials">
-      <div class="tutorial">
-        <div class="row">
-          <div class="col-2">.
-            <img src="{{ asset('img/記事アイコン1.jpeg') }}" class="">
+      <h2 class="contant-title">VS-Connectの使い方</h2>
+      <div class="tutorials col-md-8">
+        <div class="tutorial">
+          <div class="row">
+            <div class="col-2 tutorial-iconBorder">
+              <img src="{{ asset('img/記事アイコン1.jpeg') }}" class="tutorial-icon">
+            </div>
+            <div class="col-10">
+              <h3>募集をかける</h3>
+              <p>自分の機体のコストや機体名など詳細内容を書いて仲間を募集しよう</p>
+            </div>
           </div>
-          <div class="col-10">.
-            <h3></h3>
-            <p></p>
+        </div>
+        <div class="tutorial">
+          <div class="row">
+            <div class="col-2 tutorial-iconBorder">
+              <img src="{{ asset('img/検索アイコン1.jpeg') }}" class="tutorial-icon">
+            </div>
+            <div class="col-10">
+              <h3>仲間を見つける</h3>
+              <p>自分の条件に合った投稿があるか検索してみよう</p>
+            </div>
           </div>
-          <div class="col-2">.
-            <img src="{{ asset('img/検索アイコン1.jpeg') }}" class="">
+        </div>
+        <div class="tutorial">
+          <div class="row">
+            <div class="col-2 tutorial-iconBorder">
+              <img src="{{ asset('img/コミュニケーションアイコン3.jpeg') }}" class="tutorial-icon">
+            </div>
+            <div class="col-10">
+              <h3>コメントする</h3>
+              <p>条件が合ったらマッチできるか積極的に声をかけてみよう</p>
+            </div>
           </div>
-          <div class="col-10">.
-            <h3></h3>
-            <p></p>
+        </div>
+        <div class="tutorial">
+          <div class="row">
+            <div class="col-2 tutorial-iconBorder">
+              <img src="{{ asset('img/フリーのクリップアイコン.jpeg') }}" class="tutorial-icon">
+            </div>
+            <div class="col-10">
+              <h3>保存する</h3>
+              <p>気になった投稿があればクリップボタンで保存しよう</p>
+            </div>          
           </div>
-          <div class="col-2">.
-            <img src="{{ asset('img/コミュニケーションアイコン3.jpeg') }}" class="">
-          </div>
-          <div class="col-10">.
-            <h3></h3>
-            <p></p>
-          </div>
-          <div class="col-2">.
-            <img src="{{ asset('img/フリーのクリップアイコン.jpeg') }}" class="">
-          </div>
-          <div class="col-10">.
-            <h3></h3>
-            <p></p>
-          </div>
-          <div class="col-2">.
-            <img src="{{ asset('img/登録アイコン.jpeg') }}" class="">
-          </div>
-          <div class="col-10">.
-            <h3></h3>
-            <p></p>
+        </div>
+        <div class="tutorial">
+          <div class="row">
+            <div class="col-2 tutorial-iconBorder">
+              <img src="{{ asset('img/登録アイコン.jpeg') }}" class="tutorial-icon">
+            </div>
+            <div class="col-10">
+              <h3>ユーザーフォロー</h3>
+              <p>お気に入りのユーザーがいればフォローしよう</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-  </div> -->
+  </div>
 </main>
+
+<footer>
+
+</footer>
 @endsection
