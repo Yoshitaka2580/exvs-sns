@@ -1,6 +1,6 @@
 <header class="navbar navbar-expand navbar-dark">
   <div class="container">
-    <a class="navbar-home" href="/"><i class="fab fa-playstation"></i>VS-Conn</a>
+    <a class="navbar-home" href="/"><i class="fab fa-playstation"></i>VS-Connect</a>
     @auth
     <form action="/search" method="get" class="input-group md-form form-sm form-2 pl-0 tag-form">
       <input type="search" name="search" required class="form-control input-search my-0 py-1 red-border" placeholder="キーワードで検索[タグ名]" style="color: #fff;">
