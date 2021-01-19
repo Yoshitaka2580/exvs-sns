@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
+    // 複数のコメントは一つの投稿に
     public function posts() :HasMany
     {
         return $this->hasMany('App\Post')->withTimestamps();
