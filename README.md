@@ -1,11 +1,10 @@
-
 # VS-Connect
-***
-PlayStation4ソフト「機動戦士ガンダム マキシブーストON」のコミュニティサイトです。
+
+PlayStation4ソフト「機動戦士ガンダム マキシブーストON」のコミュニティサイトです。<br>
 **URL :** http://vs-connect.work/
 
 ## アプリ概要
-***
+
 - 相方や仲間の募集する投稿
 - 気になった投稿やマッチした投稿をクリップして保存
 - 自分の条件に合って参加したい募集にコメントができる
@@ -13,10 +12,10 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
 - 募集している機体名を検索できる（#ハッシュタグ)
 
 作成した背景など、より詳細な情報は下記からご覧ください。
+<br>
 [ポートフォリオ( VS-Connect ) 解説 - Qiita](https://qiita.com/yossy2580/private/a22af66ba4d0937e77d3)
 
 ## 使用技術
-***
 
 - フロントエンド
   - HTML / CSS / Bootstrap / MDBootstrap
@@ -46,7 +45,7 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
   - Slack
 
 ## 機能一覧
-***
+
 - ユーザー登録関連
   - 新規登録機能
   - ログイン、ログアウト機能
@@ -78,7 +77,6 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
 - PHPUnitテスト
 
 ## DB設計
-***
 
 ### ER図
 
@@ -100,13 +98,14 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
 |  comments  |          ユーザー投稿へのコメント情報           |
 
 ## その他
-***
+
 現在も開発中であり、順次実装予定です。
 実装予定機能はissuesよりご確認いただけます。
+<br>
 [Issues · Yoshitaka2580/exvs-sns · GitHub](https://github.com/Yoshitaka2580/exvs-sns/issues)
 
 ## 作者
-***
+
 [Twitter](https://twitter.com/yossy2580)
 
 **メールアドレス :** yoshitakanakashima0528@gmail.com
