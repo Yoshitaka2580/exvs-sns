@@ -1,78 +1,112 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# VS-Connect
+***
+PlayStation4ソフト「機動戦士ガンダム マキシブーストON」のコミュニティサイトです。
+**URL :** http://vs-connect.work/
 
-## About Laravel
+## アプリ概要
+***
+- 相方や仲間の募集する投稿
+- 気になった投稿やマッチした投稿をクリップして保存
+- 自分の条件に合って参加したい募集にコメントができる
+- 気になったユーザーや、今後マッチしたいユーザーをフォロー
+- 募集している機体名を検索できる（#ハッシュタグ)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+作成した背景など、より詳細な情報は下記からご覧ください。
+[ポートフォリオ( VS-Connect ) 解説 - Qiita](https://qiita.com/yossy2580/private/a22af66ba4d0937e77d3)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 使用技術
+***
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- フロントエンド
+  - HTML / CSS / Bootstrap / MDBootstrap
+  - Vue.js 2.6.12
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- バックエンド
+  - PHP 7.3.22
+  - Laravel 6.18.36
+  - PHPUnit 8.0
+  - GoogleAPI
+  - FacebookAPI
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+- インフラ
+  - CircleCi 2.1
+  - Docker 19.03.12 / docekr-compose  1.27.2
+  - nginx
+  - PostgreSQL 9.5.19
+  - AWS (VPC, EC2, ALB, S3, RDS, CodeDeploy, Chatbot, CloudFormation, RouteS3, EIP, IAM)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+- その他ツール
+  - draw.io
+  - Visual Studio Code
+  - Gyazo
+  - Slack
 
-## Contributing
+## 機能一覧
+***
+- ユーザー登録関連
+  - 新規登録機能
+  - ログイン、ログアウト機能
+  - ゲストユーザーログイン機能
+  - googleアカウントで登録
+  - facebookアカウントで登録
+- 記事投稿関連 (CRUD)
+  - 募集投稿の作成、編集、一覧、削除機能
+- コメント機能
+  - 募集に対してのコメント作成、一覧、削除機能
+- ページネーション
+  - 募集投稿一覧
+- ユーザープロフィール編集機能
+  - プロフィール画像
+  - 自己紹介文
+- パスワード変更機能
+- カテゴリー機能
+  - 機体コストの作成
+  - コストカテゴリーごとの投稿一覧
+- タグ機能
+  - タグ自動補完機能
+  - タグごとの投稿一覧
+- フォロー機能
+  - フォロー中/フォロワーのユーザー一覧
+- 記事保存機能
+  - 保存した投稿一覧
+- 検索機能
+  - タグ検索機能
+- PHPUnitテスト
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## DB設計
+***
 
-## Code of Conduct
+### ER図
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![b19bac3dce173537cfbdc2c85ff7d6ac.png](https://i.gyazo.com/b19bac3dce173537cfbdc2c85ff7d6ac.png)
 
-## Security Vulnerabilities
+**URL :** https://i.gyazo.com/b19bac3dce173537cfbdc2c85ff7d6ac.png
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 各テーブルについて
 
-## License
+| テーブル名 |                      説明                       |
+|:----------:|:-----------------------------------------------:|
+|   users    |                登録ユーザー情報                 |
+|   posts    |               ユーザーの投稿情報                |
+|  follows   | フォロー中/フォロワーのユーザー情報 |
+| categories |       ユーザー投稿のコストカテゴリー情報        |
+|   likes    |                投稿への保存情報                 |
+|    tags    |             ユーザー投稿のタグ情報              |
+|  post_tag  |            postsとtagsの中間テーブル            |
+|  comments  |          ユーザー投稿へのコメント情報           |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## その他
+***
+現在も開発中であり、順次実装予定です。
+実装予定機能はissuesよりご確認いただけます。
+[Issues · Yoshitaka2580/exvs-sns · GitHub](https://github.com/Yoshitaka2580/exvs-sns/issues)
+
+## 作者
+***
+[Twitter](https://twitter.com/yossy2580)
+
+**メールアドレス :** yoshitakanakashima0528@gmail.com
