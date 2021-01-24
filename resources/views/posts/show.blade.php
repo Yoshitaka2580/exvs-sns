@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $post->title .'| VS-Conn')
+@section('title', $post->title .'| VS-Connect')
 
 @section('content')
   @include('nav')
