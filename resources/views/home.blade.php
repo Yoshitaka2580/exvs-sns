@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'VS-Conn')
+@section('title', 'VS-Connect')
 
 @section('content')
 @include('nav')

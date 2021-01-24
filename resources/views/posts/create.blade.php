@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', '投稿する | VS-Conn')
+@section('title', '投稿する | VS-Connect')
 
 @section('content')
 @include('nav')
