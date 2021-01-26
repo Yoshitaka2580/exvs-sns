@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Validator;
+use Storage;
 
 class UserController extends Controller
 {
@@ -49,12 +50,15 @@ class UserController extends Controller
         }
 
         $uploadfile = $request->file('thumbnail');
+        $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
+        $thumbnail = Storage::disk('s3')->url($path);
 
-        if (!empty($uploadfile)) {
+        if (!empty($thumbnail)) {
             $thumbnailname = $request->file('thumbnail')->hashName();
             $request->file('thumbnail')->storeAs('public/user', $thumbnailname);
+            
             $param = [
-                'thumbnail'=>$thumbnailname,
+                'thumbnail'=> $thumbnailname,
                 'body' => $request->body,
             ];
 
