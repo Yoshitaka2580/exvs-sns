@@ -21,19 +21,15 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
   - HTML / CSS / Bootstrap / MDBootstrap
   - Vue.js 2.6.12
 
-
 - バックエンド
   - PHP 7.3.22
   - Laravel 6.18.36
   - PHPUnit 8.0
-  - GoogleAPI
-  - FacebookAPI
-
 
 - インフラ
   - CircleCi 2.1
-  - Docker 19.03.12 / docekr-compose  1.27.2
-  - nginx
+  - Docker 19.03.12 / docekr-compose 1.27.2
+  - nginx 1.12.2
   - PostgreSQL 9.5.19
   - AWS (VPC, EC2, ALB, S3, RDS, CodeDeploy, Chatbot, CloudFormation, RouteS3, EIP, IAM)
 
@@ -50,8 +46,6 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
   - 新規登録機能
   - ログイン、ログアウト機能
   - ゲストユーザーログイン機能
-  - googleアカウントで登録
-  - facebookアカウントで登録
 - 記事投稿関連 (CRUD)
   - 募集投稿の作成、編集、一覧、削除機能
 - コメント機能
@@ -75,6 +69,10 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
 - 検索機能
   - タグ検索機能
 - PHPUnitテスト
+
+## インフラ構成図
+
+![Untitled Diagram (1).png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554122/31636387-27ae-2768-5537-4807453d29c1.png)
 
 ## DB設計
 
