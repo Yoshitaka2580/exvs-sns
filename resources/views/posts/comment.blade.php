@@ -20,7 +20,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $comment->id }}">
-            <i class="fas fa-trash-alt mr-1"></i>コメントを削除する
+          <i class="fas fa-trash-alt mr-1"></i>コメントを削除する
           </a>
         </div>
       </div>
