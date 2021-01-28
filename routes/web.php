@@ -28,7 +28,7 @@ Route::prefix('register')->name('register.')->group(function () {
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('/posts', 'PostController');
-Route::get('/search', 'PostController@search');
+Route::get('/search', 'PostController@searchTag');
 
 Route::prefix('posts')->name('posts.')->group(function () {
   Route::put('/{post}/like', 'PostController@like')->name('like');
