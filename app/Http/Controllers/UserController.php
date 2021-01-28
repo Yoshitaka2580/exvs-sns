@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\User;
 use Validator;
@@ -27,36 +28,26 @@ class UserController extends Controller
         ]);
     }
 
-    public function edit(string $name) 
+    public function edit(string $name)
     {
         $user = User::where('name', $name)->first();
 
         return view('users.edit', compact('user'));
     }
 
-    public function update(Request $request, string $name)
+    public function update(UserRequest $request, string $name)
     {
-        $rules = [
-            'user_id' => 'integer|required|exists:users,id',
-            'body' => 'max:100',
-        ];
-        
-        $validator = Validator::make($request->all(),$rules);
-
-        if ($validator->fails()) {
-            return redirect('/users/edit')
-                ->withErrors($validator)
-                ->withInput();
-        }
-
         $uploadfile = $request->file('thumbnail');
-        $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
-        $thumbnail = Storage::disk('s3')->url($path);
+        
+        if (!empty($uploadfile)) {
+            if (app()->isLocal() || app()->runningUnitTests()) {
+                $thumbnailname = $request->file('thumbnail')->hashName();
+                $request->file('thumbnail')->storeAs('public/user', $thumbnailname);
+            } else {
+                $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
+                $thumbnailname = Storage::disk('s3')->url($path);
+            }
 
-        if (!empty($thumbnail)) {
-            $thumbnailname = $request->file('thumbnail')->hashName();
-            $request->file('thumbnail')->storeAs('public/user', $thumbnailname);
-            
             $param = [
                 'thumbnail'=> $thumbnailname,
                 'body' => $request->body,
