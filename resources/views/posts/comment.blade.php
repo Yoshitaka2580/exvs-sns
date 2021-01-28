@@ -57,7 +57,11 @@
   <div class="comment-form">
     <a href="{{ route('users.show', ['name' => $post->user->name]) }}" class= "card-user">
       @if(!empty($post->user->thumbnail))
-      <img src="/storage/user/{{ $post->user->thumbnail }}" class="editThumbnail">
+        @if (app()->isLocal() || app()->runningUnitTests())
+        <img src="/storage/user/{{ $post->user->thumbnail }}" class="editThumbnail">
+        @else
+        <img src="{{ $post->user->thumbnail }}" class="editThumbnail">
+        @endif
       @else
       <i class="fas fa-user-circle circle-editThumbnail"></i>
       @endif

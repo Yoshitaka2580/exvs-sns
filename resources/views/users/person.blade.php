@@ -2,7 +2,11 @@
   <div class="card-left">
     <a href="{{ route('users.show', ['name' => $person->name]) }}" class="card-user">
       @if(($person->thumbnail))
-      <img src="/storage/user/{{ $person->thumbnail }}" class="editThumbnail">
+        @if (app()->isLocal() || app()->runningUnitTests())
+        <img src="/storage/user/{{ $person->thumbnail }}" class="editThumbnail">
+        @else
+        <img src="{{ $person->thumbnail }}" class="editThumbnail">
+        @endif
       @else
       <i class="fas fa-user-circle fa-3x"></i>
       @endif
