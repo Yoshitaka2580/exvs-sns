@@ -20,7 +20,7 @@
     value="{{ $post->category_id ?? old('category_id') }}"
   >
   @foreach($categories as $id => $name)
-    <option value="{{ $id }}">{{ $name }}cost</option>
+    <option value="{{ $id }}">{{ $name }} cost</option>
   @endforeach
   </select>
 </div>

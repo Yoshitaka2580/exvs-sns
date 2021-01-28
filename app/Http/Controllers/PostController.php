@@ -59,19 +59,6 @@ class PostController extends Controller
         ]);
     }
 
-    public function search(Request $request)
-    {
-        $search = $request->get('search');
-        $tag = Tag::where('name', $search)->first();
-
-        if ($tag === null) {
-            return redirect('/posts')
-                    ->with('flash_message', '検索に該当するタグは登録されていません');
-        }
-        
-        return view('tags.show', compact('tag'));
-    }
-
     public function store(PostRequest $request, Post $post)
     {
         $input = $request->all();
@@ -126,7 +113,19 @@ class PostController extends Controller
         $post->delete();
         
         return redirect()->to('/posts');
+    }
 
+    public function searchTag(Request $request)
+    {
+        $search = $request->get('search');
+        $tag = Tag::where('name', $search)->first();
+
+        if ($tag === null) {
+            return redirect('/posts')
+                    ->with('flash_message', '検索に該当するタグは登録されていません');
+        }
+
+        return view('tags.show', compact('tag'));
     }
 
     public function like(Request $request, Post $post)
