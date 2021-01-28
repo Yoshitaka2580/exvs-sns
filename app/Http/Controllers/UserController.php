@@ -37,17 +37,16 @@ class UserController extends Controller
     public function update(UserRequest $request, string $name)
     {
         $uploadfile = $request->file('thumbnail');
-
+        $thumbnailname = $request->file('thumbnail')->hashName();
+        
         if (app()->isLocal() || app()->runningUnitTests()) {
-            $thumbnailname = $request->file('thumbnail')->hashName();
-            $request->file('thumbnail')->storeAs('public/user', $thumbnailname);
+            $thumbnail = $request->file('thumbnail')->storeAs('public/user', $thumbnailname);
         } else {
             $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
-            $thumbnailname = Storage::disk('s3')->url($path);
+            $thumbnail = Storage::disk('s3')->url($path);
         }
 
-        if (!empty($uploadfile)) {
-
+        if (!empty($thumbnail)) {
             $param = [
                 'thumbnail'=> $thumbnailname,
                 'body' => $request->body,
