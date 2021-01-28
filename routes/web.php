@@ -48,5 +48,5 @@ Route::prefix('/users')->name('users.')->group(function () {
   Route::delete('/{name}/follow', 'UserController@unfollow')->name('unfollow');
 });
 
-Route::post('/posts/{post}/comment', 'PostController@comment')->name('comment.store');
-Route::delete('/posts/{post}/{comment}', 'PostController@destroyComment')->name('comment.destroy');
+Route::post('/posts/{post}/comment', 'CommentController@comment')->name('comment.store');
+Route::delete('/posts/{post}/{comment}', 'CommentController@destroy')->name('comment.destroy');

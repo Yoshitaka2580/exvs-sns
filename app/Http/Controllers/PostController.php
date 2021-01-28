@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Tag;
-use App\Comment;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
@@ -149,28 +148,5 @@ class PostController extends Controller
             'id' => $post->id,
             'countLikes' => $post->count_likes,
         ];
-    }
-
-    public function comment(Request $request, Comment $comment)
-    {
-        $request->validate([
-            'post_id' => 'required|exists:posts,id',
-            'comment' => 'required|max:140',
-        ]);
-
-        $input = $request->all();
-        $comment->fill($input);
-        $comment->user_id = $request->user()->id;
-        $comment->save();
-        
-        return redirect()->route('posts.show', [$comment['post_id']]);
-
-    }
-
-    public function destroyComment(Post $post, Comment $comment)
-    {
-        $comment->delete();
-        
-        return redirect()->route('posts.show', compact('post'));
     }
 }
