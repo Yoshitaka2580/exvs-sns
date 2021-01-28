@@ -89,7 +89,11 @@
       <div class="card-user ml-auto">
         <a href="{{ route('users.show', ['name' => $post->user->name]) }}">
           @if(!empty($post->user->thumbnail))
-          <img src="/storage/user/{{ $post->user->thumbnail }}" class="user-thumbnail">
+            @if (app()->isLocal() || app()->runningUnitTests())
+            <img src="/storage/user/{{ $post->user->thumbnail }}" class="user-thumbnail">
+            @else
+            <img src="{{ $post->user->thumbnail }}" class="user-thumbnail">
+            @endif
           @else
           <i class="fas fa-user-circle user-icon"></i>
           @endif
