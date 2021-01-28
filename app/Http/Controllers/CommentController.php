@@ -4,21 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Post;
+use App\Http\Requests\CommentRequest;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(('auth'));
+        $this->middleware('auth');
     }
 
-    public function comment(Request $request, Comment $comment)
+    public function comment(CommentRequest $request, Comment $comment)
     {
-        $request->validate([
-            'comment' => 'required|max:140',
-        ]);
-
         $input = $request->all();
         $comment->fill($input);
         $comment->post_id = $request->post;
@@ -37,7 +34,4 @@ class CommentController extends Controller
         
         return redirect()->route('posts.show', compact('post'));
     }
-
-
-
 }
