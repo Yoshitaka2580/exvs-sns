@@ -37,7 +37,11 @@
         <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           @if(!empty(Auth::user()->thumbnail))
+            @if (app()->isLocal() || app()->runningUnitTests())
             <img src="/storage/user/{{ Auth::user()->thumbnail }}" class="editThumbnail">
+            @else
+            <img src="{{ Auth::user()->thumbnail }}" class="editThumbnail">
+            @endif
           @else
             <i class="fas fa-user-circle circle-editThumbnail" style="vertical-align: middle;"></i>
           @endif

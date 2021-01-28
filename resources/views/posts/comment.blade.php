@@ -5,7 +5,11 @@
   <div class="comment-text">
     <a href="{{ route('users.show', ['name' => $comment->user->name]) }}" class= "card-user">
     @if(!empty($comment->user->thumbnail))
-    <img src="/storage/user/{{ $comment->user->thumbnail }}" class="editThumbnail">
+      @if (app()->isLocal() || app()->runningUnitTests())
+      <img src="/storage/user/{{ $comment->user->thumbnail }}" class="editThumbnail">
+      @else
+      <img src="{{ $comment->user->thumbnail }}" class="editThumbnail">
+      @endif
     @else
     <i class="fas fa-user-circle circle-editThumbnail"></i>
     @endif
@@ -55,20 +59,19 @@
   <p class="card-text-p">コメントはありません。</p>
   @endforelse
   <div class="comment-form">
-    <a href="{{ route('users.show', ['name' => $post->user->name]) }}" class= "card-user">
-      @if(!empty($post->user->thumbnail))
+    <a href="{{ route('users.show', ['name' => Auth::user()->name]) }}" class= "card-user">
+      @if(!empty(Auth::user()->thumbnail))
         @if (app()->isLocal() || app()->runningUnitTests())
-        <img src="/storage/user/{{ $post->user->thumbnail }}" class="editThumbnail">
+        <img src="/storage/user/{{ Auth::user()->thumbnail }}" class="editThumbnail">
         @else
-        <img src="{{ $post->user->thumbnail }}" class="editThumbnail">
+        <img src="{{ Auth::user()->thumbnail }}" class="editThumbnail">
         @endif
       @else
       <i class="fas fa-user-circle circle-editThumbnail"></i>
       @endif
     </a>
     <form method="POST" action="{{ route('comment.store', ['post' => $post]) }}" style="width: 100%;" class="ml-2">
-    @csrf
-    <input name="post_id" type="hidden" value="{{ $post->id }}">
+      @csrf
       <div class="form-group mt-3">
         <textarea name="comment" class="form-control" rows="3" required placeholder="コメントを入力してください">{{ old('commnet') }}</textarea>
       </div>
