@@ -27,9 +27,8 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required|max:20',
             'body' => 'required|max:200',
-            'category_id' => 'required',
+            'category_id' => 'required|integer|exists:categories,id',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
-            
         ];
     }
     // バリデーションエラーメッセージの項目名
@@ -38,6 +37,7 @@ class PostRequest extends FormRequest
         return [
             'title' => 'タイトル',
             'body' => '本文',
+            'category_id' => 'カテゴリー',
             'tags' => 'タグ',
         ];
     }
