@@ -39,19 +39,18 @@ class UserController extends Controller
         $uploadfile = $request->file('thumbnail');
 
         if (!empty($uploadfile)) {
-            if (app()->environment('production')) {
-                $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
-                $thumbnailname = Storage::disk('s3')->url($path);
-            } else {
+            if (app()->isLocal() || app()->runningUnitTests()) {
                 $thumbnailname = $request->file('thumbnail')->hashName();
                 $request->file('thumbnail')->storeAs('public/user', $thumbnailname);
+            } else {
+                $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
+                $thumbnailname = Storage::disk('s3')->url($path);
             }
-            
+
             $param = [
                 'thumbnail'=> $thumbnailname,
                 'body' => $request->body,
             ];
-
         } else {
             $param = [
                 'body' => $request->body,
