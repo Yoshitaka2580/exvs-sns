@@ -1,7 +1,11 @@
 @csrf
 <div class="user-edit">
 @if(!empty($user->thumbnail))
+  @if (app()->isLocal() || app()->runningUnitTests())
   <img src="/storage/user/{{ $user->thumbnail }}" class="mypage-thumbnail">
+  @else
+  <img src="{{ $user->thumbnail }}" class="mypage-thumbnail">
+  @endif
 @else
   <i class="fas fa-user mypage-user-icon"></i>
   <p class="mt-2">画像なし</p>

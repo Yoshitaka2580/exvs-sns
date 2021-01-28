@@ -46,7 +46,6 @@ class UserController extends Controller
                 $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
                 $thumbnailname = Storage::disk('s3')->url($path);
             }
-
             $param = [
                 'thumbnail'=> $thumbnailname,
                 'body' => $request->body,
