@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\User;
-use Validator;
 use Storage;
 
 class UserController extends Controller
@@ -38,15 +37,16 @@ class UserController extends Controller
     public function update(UserRequest $request, string $name)
     {
         $uploadfile = $request->file('thumbnail');
-        
+
+        if (app()->isLocal() || app()->runningUnitTests()) {
+            $thumbnailname = $request->file('thumbnail')->hashName();
+            $request->file('thumbnail')->storeAs('public/user', $thumbnailname);
+        } else {
+            $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
+            $thumbnailname = Storage::disk('s3')->url($path);
+        }
+
         if (!empty($uploadfile)) {
-            if (app()->isLocal() || app()->runningUnitTests()) {
-                $thumbnailname = $request->file('thumbnail')->hashName();
-                $request->file('thumbnail')->storeAs('public/user', $thumbnailname);
-            } else {
-                $path = Storage::disk('s3')->putFile('vs-connect', $uploadfile, 'public');
-                $thumbnailname = Storage::disk('s3')->url($path);
-            }
 
             $param = [
                 'thumbnail'=> $thumbnailname,
