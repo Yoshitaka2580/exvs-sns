@@ -1,7 +1,7 @@
 # VS-Connect
 
 PlayStation4ソフト「機動戦士ガンダム マキシブーストON」のコミュニティサイトです。<br>
-**URL :** http://vs-connect.work/
+**URL :** https://vs-connect.work/
 
 ## アプリ概要
 
@@ -72,7 +72,8 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
 
 ## インフラ構成図
 
-![Untitled Diagram (1).png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554122/31636387-27ae-2768-5537-4807453d29c1.png)
+![Untitled Diagram.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/554122/33bc227b-187f-c9fe-aa53-1221439ea429.png)
+
 
 ## DB設計
 
