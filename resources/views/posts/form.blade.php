@@ -13,15 +13,13 @@
 </div>
 
 <div class="form-group">
-<p class="name-label">機体コストを選択してください<span class="form-alert">※</span></p>
-  <select 
-    name="category_id"
-    class="form-control form-cost"
-    value="{{ $post->category_id ?? old('category_id') }}"
-  >
-  @foreach($categories as $id => $name)
-    <option value="{{ $id }}">{{ $name }} cost</option>
-  @endforeach
+  <p class="name-label">機体コストを選択してください<span class="form-alert">※</span></p>
+  <select name="category_id" class="form-control form-cost">
+    @foreach($categories as $id => $name)
+    <option value="{{ $id }}"
+    {{ $id === old('category_id', $post->category_id) ? 'selected' : '' }}>{{ $name }} cost
+    </option>
+    @endforeach
   </select>
 </div>
   
