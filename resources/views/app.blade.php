@@ -16,20 +16,36 @@
   <meta property="og:description" content="ポートフォリオです" />
   <meta property="og:image" content="images/business-1209705_640.jpg" />
 
+  @if (app()->isLocal() || app()->runningUnitTests())
   <!-- Reset CSS -->
   <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ asset('img/favicon.ico.jpg') }}">
+  @else
+  <!-- Reset CSS -->
+  <link href="{{ secure_asset('css/reset.css') }}" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ secure_asset('img/favicon.ico.jpg') }}">
+  @endif
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+
+  @if (app()->isLocal() || app()->runningUnitTests())
   <!-- Base CSS -->
   <link href="{{ asset('css/base.css') }}" rel="stylesheet">
   <!-- Style CSS -->
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  @else
+  <!-- Base CSS -->
+  <link href="{{ secure_asset('css/base.css') }}" rel="stylesheet">
+  <!-- Style CSS -->
+  <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet">
+  @endif
 </head>
 
 <body>
