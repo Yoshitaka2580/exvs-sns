@@ -1,5 +1,5 @@
 <div class="card card-mypage">
-  <div class="card-left">
+  <div class="mypage-left">
     <a href="{{ route('users.show', ['name' => $person->name]) }}" class="card-user">
       @if(($person->thumbnail))
         @if (app()->isLocal() || app()->runningUnitTests())
@@ -12,7 +12,7 @@
       @endif
     </a>
   </div>
-  <div class="card-right ml-2">
+  <div class="mypage-right ml-2">
     <h4 class="mt-0">
       <a href="{{ route('users.show', ['name' => $person->name]) }}" class="mypage-user">
         {{ $person->name }}
