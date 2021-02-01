@@ -16,12 +16,14 @@
   <meta property="og:description" content="ポートフォリオです" />
   <meta property="og:image" content="images/business-1209705_640.jpg" />
 
-  @if (app()->isLocal() || app()->runningUnitTests())
+  @if (app('env') === 'local')
   <!-- Reset CSS -->
   <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ asset('img/favicon.ico.jpg') }}">
-  @else
+  @endif
+
+  @if(app('env') === 'production')
   <!-- Reset CSS -->
   <link href="{{ secure_asset('css/reset.css') }}" rel="stylesheet">
   <!-- Favicon -->
@@ -35,12 +37,14 @@
   <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
 
-  @if (app()->isLocal() || app()->runningUnitTests())
+  @if (app('env') === 'local')
   <!-- Base CSS -->
   <link href="{{ asset('css/base.css') }}" rel="stylesheet">
   <!-- Style CSS -->
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-  @else
+  @endif
+
+  @if(app('env') === 'production')
   <!-- Base CSS -->
   <link href="{{ secure_asset('css/base.css') }}" rel="stylesheet">
   <!-- Style CSS -->
