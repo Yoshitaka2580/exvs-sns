@@ -354,9 +354,14 @@ textarea {
   flex-direction: row;
 }
 
+.card-left {
+  width: 110px;
+  border-right: 1px solid #464c56;
+}
+
 .card-right {
- width: 100%;
  margin-left: 20px;
+ width: 100%;
 }
 
 .card-score {
