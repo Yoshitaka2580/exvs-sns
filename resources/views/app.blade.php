@@ -23,7 +23,7 @@
   <link rel="shortcut icon" href="{{ asset('img/favicon.ico.jpg') }}">
   @endif
 
-  @if(app('env') === 'production')
+  @if (app('env') === 'production')
   <!-- Reset CSS -->
   <link href="{{ secure_asset('css/reset.css') }}" rel="stylesheet">
   <!-- Favicon -->
@@ -44,7 +44,7 @@
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   @endif
 
-  @if(app('env') === 'production')
+  @if (app('env') === 'production')
   <!-- Base CSS -->
   <link href="{{ secure_asset('css/base.css') }}" rel="stylesheet">
   <!-- Style CSS -->
