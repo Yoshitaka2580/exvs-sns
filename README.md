@@ -25,6 +25,8 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
   - PHP 7.3.22
   - Laravel 6.18.36
   - PHPUnit 8.0
+  - Google API
+  - Facebook API
 
 - インフラ
   - CircleCi 2.1
@@ -46,6 +48,8 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
   - 新規登録機能
   - ログイン、ログアウト機能
   - ゲストユーザーログイン機能
+  - Facebookログイン機能
+  - Googleログイン機能
 - 記事投稿関連 (CRUD)
   - 募集投稿の作成、編集、一覧、削除機能
 - コメント機能
