@@ -349,7 +349,7 @@ textarea {
 }
 
 .card-main {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
 }
@@ -420,6 +420,12 @@ textarea {
   margin-bottom: 0;
   font-weight: bold;
   font-size: 20px;
+}
+
+.card-status {
+  color: #fff;
+  text-align: center;
+  width: 90px;
 }
 
 .index-card-title {
