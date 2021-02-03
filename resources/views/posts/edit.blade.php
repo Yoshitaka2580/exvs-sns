@@ -14,29 +14,42 @@
         <div class="md-form">
           <p class="name-label">タイトル<span class="form-alert">※</span></p>
           <input type="text" name="title" class="form-control p-0" value="{{ $post->title ?? old('title') }}" required>
-          </div>
+        </div>
 
-          <div class="form-group">
+        <div class="form-group">
+          <p class="name-label">募集状態</p>
+          <select name="status" id="status" class="form-control form-cost">
+            @foreach(\App\Post::STATUS as $id => $name)
+            <option value="{{ $id }}"
+            {{ $id === old('status', $post->status) ? 'selected' : '' }}>
+            {{ $name['label'] }}
+            @endforeach
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <p class="name-label">機体コストを選択してください<span class="form-alert">※</span></p>
+          <select name="category_id" class="form-control form-cost">
+            @foreach($categories as $id => $name)
+            <option value="{{ $id }}"
+            {{ $id === old('category_id', $post->category_id) ? 'selected' : '' }}>
+            {{ $name }} cost
+            </option>
+            @endforeach
+          </select>
+        </div>
+
+        <div class="form-group">
           <p class="name-label">機体名を登録してください</p>
           <post-tags-input 
           :initial-tags='@json($tagNames ?? [])'
           :autocomplete-items='@json($allTagNames ?? [])'>
           </post-tags-input>
-          </div>
+        </div>
 
-          <div class="form-group">
-          <p class="name-label">機体コストを選択してください<span class="form-alert">※</span></p>
-          <select name="category_id" class="form-control form-cost">
-            @foreach($categories as $id => $name)
-            <option value="{{ $id }}"
-            {{ $id === old('category_id', $post->category_id) ? 'selected' : '' }}>{{ $name }} cost
-            </option>
-            @endforeach
-          </select>
-          </div>
-
-          <div class="form-group">
-          <p class="name-label">備考<span class="form-alert">※</span></p>
+        <div class="form-group">
+          <p class="name-label">詳細<span class="form-alert">※</span></p>
           <textarea 
             name="body" 
             class="form-control" 
@@ -45,6 +58,7 @@
             required>{{ $post->body ?? old('body') }}
           </textarea>
         </div>
+
         <div class="form-btn">
           <a href="{{ route('posts.index') }}" class="btn btn-back">戻る</a>
           <button type="submit" class="btn btn-submit">更新</button>

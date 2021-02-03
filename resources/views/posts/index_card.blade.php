@@ -1,8 +1,6 @@
 <div class="card card-main">
   <div class="card-left">
-    <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost">
-      {{ $post->category->name }}コスト
-    </a>
+    <p class="label {{ $post->status_class }}">{{ $post->status_label }}</p>
   </div>
   <div class="card-right">
     <div class="card-title-btn">
@@ -52,6 +50,11 @@
           </div>
         </div>
       @endif
+    </div>
+    <div class="mt-2">
+      <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost">
+        {{ $post->category->name }}コスト
+      </a>
     </div>
     @foreach($post->tags as $tag)
     @if($loop->first)

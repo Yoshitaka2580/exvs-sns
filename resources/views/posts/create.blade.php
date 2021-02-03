@@ -16,14 +16,6 @@
         </div>
 
         <div class="form-group">
-          <p class="name-label">機体名を登録してください</p>
-          <post-tags-input 
-          :initial-tags='@json($tagNames ?? [])'
-          :autocomplete-items='@json($allTagNames ?? [])'>
-          </post-tags-input>
-        </div>
-
-        <div class="form-group">
           <p class="name-label">機体コストを選択してください<span class="form-alert">※</span></p>
           <select name="category_id" class="form-control form-cost">
             @foreach($categories as $id => $name)
@@ -31,9 +23,17 @@
             @endforeach
           </select>
         </div>
+
+        <div class="form-group">
+          <p class="name-label">機体名を登録してください</p>
+          <post-tags-input 
+          :initial-tags='@json($tagNames ?? [])'
+          :autocomplete-items='@json($allTagNames ?? [])'>
+          </post-tags-input>
+        </div>
           
         <div class="form-group">
-          <p class="name-label">備考<span class="form-alert">※</span></p>
+          <p class="name-label">詳細<span class="form-alert">※</span></p>
           <textarea 
             name="body" 
             class="form-control" 
