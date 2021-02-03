@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Psy\CodeCleaner\ReturnTypePass;
 
 class Post extends Model
 {
@@ -14,6 +15,15 @@ class Post extends Model
         'title',
         'body',
         'category_id',
+        'status',
+    ];
+
+    /**
+     * 募集状態定義
+     */
+    const STATUS = [
+        1 => ['label' => '受付中', 'class' => 'bg-primary'],
+        2 => ['label' => '終了',  'class' => 'bg-danger'],
     ];
     
     public function user(): BelongsTo 
@@ -64,5 +74,39 @@ class Post extends Model
         }
 
         return $query->where('category_id', $category_id);
+    }
+
+    /**
+     * 募集状態のラベル
+     * @return string
+     */
+
+    public function getStatusLabelAttribute()
+    {
+        // 状態値
+        $status = $this->attributes['status'];
+
+        // 定義されていなければ空文字を返す
+        if (!isset(self::STATUS[$status])) {
+            return '';
+        }
+
+        return self::STATUS[$status]['label'];
+    }
+
+    /**
+     * 募集状態を表すHTMLクラス
+     * @return string
+     */
+
+    public function getStatusClassAttribute()
+    {
+        $status = $this->attributes['status'];
+
+        if (!isset(self::STATUS[$status])) {
+            return '';
+        }
+
+        return self::STATUS[$status]['class'];
     }
 }
