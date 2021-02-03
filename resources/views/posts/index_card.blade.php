@@ -52,7 +52,7 @@
       <p class="card-status {{ $post->status_class }}">{{ $post->status_label }}</p>
     </div>
     <div class="card-right">
-      <div class="mt-2">
+      <div>
         <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost">
           {{ $post->category->name }}コスト
         </a>
