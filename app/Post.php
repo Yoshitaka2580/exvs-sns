@@ -22,7 +22,7 @@ class Post extends Model
      * 募集状態定義
      */
     const STATUS = [
-        1 => ['label' => '受付中', 'class' => 'bg-primary'],
+        1 => ['label' => '受付中', 'class' => 'bg-success'],
         2 => ['label' => '終了',  'class' => 'bg-danger'],
     ];
     
