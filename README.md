@@ -83,9 +83,9 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
 
 ### ER図
 
-![b19bac3dce173537cfbdc2c85ff7d6ac.png](https://i.gyazo.com/b19bac3dce173537cfbdc2c85ff7d6ac.png)
+![5497fc05380e5695e0b3b3e7143ea74d.png](https://i.gyazo.com/5497fc05380e5695e0b3b3e7143ea74d.png)
 
-**URL :** https://i.gyazo.com/b19bac3dce173537cfbdc2c85ff7d6ac.png
+**URL :** https://i.gyazo.com/5497fc05380e5695e0b3b3e7143ea74d.png
 
 ### 各テーブルについて
 
