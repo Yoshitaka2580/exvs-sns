@@ -105,7 +105,7 @@ class PostController extends Controller
             $post->tags()->attach($tag);
         });
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.show', compact('post'));
     }
 
     public function destroy(Post $post)
