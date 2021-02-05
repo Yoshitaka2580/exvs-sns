@@ -75,7 +75,7 @@
       <div class="form-group mt-3">
         <textarea name="comment" class="form-control" rows="3" required placeholder="コメントを入力してください">{{ old('commnet') }}</textarea>
       </div>
-      <button type="submit" class="btn btn-submit comment-btn">コメントする</button>
+      <button type="submit" class="btn btn-submit comment-btn"><i class="far fa-comment"></i>コメントする</button>
     </form>
   </div>
 </div>

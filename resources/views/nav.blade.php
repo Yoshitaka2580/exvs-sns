@@ -10,18 +10,18 @@
     <ul class="navbar-nav">
       @guest
       <li class="nav-item">
-        <a class="nav-link" href="/posts">投稿一覧</a>
+        <a class="nav-link" href="/posts"><i class="fas fa-newspaper"></i>投稿一覧</a>
       </li>
       @endguest
       @guest
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('register') }}">新規登録</a>
+        <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user"></i>新規登録</a>
       </li>
       @endguest
 
       @guest
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+        <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>ログイン</a>
       </li>
       @endguest
 

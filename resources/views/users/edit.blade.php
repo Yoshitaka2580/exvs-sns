@@ -13,7 +13,7 @@
         @include('users.form')
         <div class="form-btn">
           <a href="{{ route('users.show', ['name' => $user->name]) }}" class="btn btn-back">戻る</a>
-          <button type="submit" class="btn btn-submit">更新</button>
+          <button type="submit" class="btn btn-submit"><i class="fas fa-user-edit"></i> 更新</button>
         </div>
       </form>
     </div>
