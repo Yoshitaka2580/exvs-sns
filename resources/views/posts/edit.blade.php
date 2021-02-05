@@ -61,7 +61,7 @@
 
         <div class="form-btn">
           <a href="{{ route('posts.index') }}" class="btn btn-back">戻る</a>
-          <button type="submit" class="btn btn-submit">更新</button>
+          <button type="submit" class="btn btn-submit"><i class="fas fa-paper-plane"></i> 更新</button>
         </div>
       </form>
     </div>
