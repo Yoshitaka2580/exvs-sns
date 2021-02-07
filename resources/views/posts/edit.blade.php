@@ -12,7 +12,7 @@
         @method('PATCH')
         @csrf
         <div class="md-form">
-          <p class="name-label">タイトル<span class="form-alert">※</span></p>
+          <p class="name-label">募集タイトル<span class="form-alert">※</span></p>
           <input type="text" name="title" class="form-control p-0" value="{{ $post->title ?? old('title') }}" required>
         </div>
 
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-          <p class="name-label">機体コストを選択してください<span class="form-alert">※</span></p>
+          <p class="name-label">投稿主の機体コストを選択してください<span class="form-alert">※</span></p>
           <select name="category_id" class="form-control form-cost">
             @foreach($categories as $id => $name)
             <option value="{{ $id }}"
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-          <p class="name-label">機体名を登録してください</p>
+          <p class="name-label">投稿主の機体名を登録してください</p>
           <post-tags-input 
           :initial-tags='@json($tagNames ?? [])'
           :autocomplete-items='@json($allTagNames ?? [])'>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="form-group">
-          <p class="name-label">詳細<span class="form-alert">※</span></p>
+          <p class="name-label">募集詳細<span class="form-alert">※</span></p>
           <textarea 
             name="body" 
             class="form-control" 
