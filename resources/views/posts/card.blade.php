@@ -3,7 +3,7 @@
     <div class="detailes-left">
       <h3 class="card-title detailes-title">{{ $post->title }}</h3>
       <div class="mobile-suit">
-        <p class="card-status {{ $post->status_class }}">{{ $post->status_label }}</p>
+        <p>募集状態 : <span class="card-status {{ $post->status_class }}">{{ $post->status_label }}</span></p>
         <p class="mt-3">機体コスト : <a href="{{ route('posts.index', ['category_id' => $post->category->id]) }}" class="card-cost ml-1">
           {{ $post->category->name }}コスト
         </a></p>
