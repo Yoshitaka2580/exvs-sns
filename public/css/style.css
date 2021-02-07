@@ -619,8 +619,6 @@ textarea {
 /* --- login form --- */
 .login-form {
   padding: 30px;
-  width: 600px;
-  margin: 0 auto;
 }
 
 .login-form-title {
