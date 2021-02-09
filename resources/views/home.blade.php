@@ -25,7 +25,7 @@
             <a href="{{ route('login.{provider}', ['provider' => 'facebook']) }}" class="social-item btn-primary"><i class="fab fa-facebook-f"></i></a>
             <a href="{{ route('login.{provider}', ['provider' => 'google']) }} " class="social-item btn-danger ml-2"><i class="fab fa-google"></i></a>
             <p class="top-messageText">アカウントお持ちの方は<a href="{{ route('login') }}" class="messageText-login">こちらからログイン</a></p>
-          </div> 
+          </div>
         </div>
       </div>
     </div>
@@ -87,7 +87,7 @@
             <div class="col-10">
               <h3>保存する</h3>
               <p>気になった投稿があればクリップボタンで保存しよう</p>
-            </div>          
+            </div>
           </div>
         </div>
         <div class="tutorial">
