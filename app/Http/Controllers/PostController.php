@@ -130,6 +130,7 @@ class PostController extends Controller
 
     public function like(Request $request, Post $post)
     {
+        // 不正リクエスト防止
         $post->likes()->detach($request->user()->id);
         $post->likes()->attach($request->user()->id);
 
