@@ -14,14 +14,14 @@ class CommentController extends Controller
         $this->middleware('auth');
     }
 
-    public function comment(CommentRequest $request, Comment $comment)
+    public function store(CommentRequest $request, Comment $comment)
     {
         $input = $request->all();
         $comment->fill($input);
         $comment->post_id = $request->post;
         $comment->user_id = $request->user()->id;
         $comment->save();
-        
+
         return redirect()->route('posts.show', [
             'post' => $comment->post_id
         ]);
@@ -31,7 +31,7 @@ class CommentController extends Controller
     public function destroy(Post $post, Comment $comment)
     {
         $comment->delete();
-        
+
         return redirect()->route('posts.show', compact('post'));
     }
 }
