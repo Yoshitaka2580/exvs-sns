@@ -16,10 +16,12 @@ class Comment extends Model
         return '@' . $this->user->name;
     }
 
-    // 複数のコメントは1つの投稿に
+    /**
+     * 複数のコメントは1つの投稿に
+     */
     public function post(): BelongsTo
     {
-        
+
         return $this->belongsTo('App\Post');
     }
 

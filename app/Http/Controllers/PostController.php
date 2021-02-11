@@ -18,9 +18,8 @@ class PostController extends Controller
         $this->authorizeResource(Post::class, 'post');
     }
 
-    public function index(Request $request)
+    public function index(Request $request, Category $category)
     {
-        $category = new Category;
         $categories = $category->getLists();
 
         $category_id = $request->category_id;
@@ -32,8 +31,8 @@ class PostController extends Controller
         $posts->load(['user', 'likes', 'tags', 'comments', 'category']);
 
         return view('posts.index', [
-            'posts' => $posts, 
-            'categories' => $categories, 
+            'posts' => $posts,
+            'categories' => $categories,
             'category_id'=> $category_id,
         ]);
     }
@@ -44,9 +43,8 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
-    public function create()
+    public function create(Category $category)
     {
-        $category  = new Category;
         $categories = $category->getLists();
 
         $allTagNames = Tag::all()->map(function ($tag) {
@@ -74,19 +72,18 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    public function edit(Post $post)
+    public function edit(Post $post, Category $category)
     {
         $tagNames = $post->tags->map(function ($tag) {
             return ['text' => $tag->name];
         });
 
-        $category = new Category;
         $categories = $category->getLists();
 
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
-        
+
         return view('posts.edit', [
             'post' => $post,
             'tagNames' => $tagNames,
@@ -111,7 +108,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        
+
         return redirect()->to('/posts');
     }
 
