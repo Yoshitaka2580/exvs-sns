@@ -26,19 +26,19 @@
 
         <div class="form-group">
           <p class="name-label">投稿主の機体名を登録してください</p>
-          <post-tags-input 
+          <post-tags-input
           :initial-tags='@json($tagNames ?? [])'
           :autocomplete-items='@json($allTagNames ?? [])'>
           </post-tags-input>
         </div>
-          
+
         <div class="form-group">
           <p class="name-label">募集詳細<span class="form-alert">※</span></p>
-          <textarea 
-            name="body" 
-            class="form-control" 
-            rows="6" 
-            placeholder="ここに詳細内容書いてください。" 
+          <textarea
+            name="body"
+            class="form-control"
+            rows="6"
+            placeholder="ここに詳細内容書いてください。"
             required>{{ $post->body ?? old('body') }}
           </textarea>
         </div>
