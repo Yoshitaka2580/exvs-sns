@@ -25,15 +25,15 @@ class PostController extends Controller
         $category_id = $request->category_id;
 
         $posts = Post::orderBy('created_at', 'desc')
-                ->categoryAt($category_id)
-                ->paginate(5);
+            ->categoryAt($category_id)
+            ->paginate(5);
 
         $posts->load(['user', 'likes', 'tags', 'comments', 'category']);
 
         return view('posts.index', [
             'posts' => $posts,
             'categories' => $categories,
-            'category_id'=> $category_id,
+            'category_id' => $category_id,
         ]);
     }
 
@@ -119,7 +119,7 @@ class PostController extends Controller
 
         if ($tag === null) {
             return redirect('/posts')
-                    ->with('flash_message', '検索に該当するタグは登録されていません');
+                ->with('flash_message', '検索に該当するタグは登録されていません');
         }
 
         return view('tags.show', compact('tag'));

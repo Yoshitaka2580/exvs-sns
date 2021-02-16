@@ -25,7 +25,6 @@ class CommentController extends Controller
         return redirect()->route('posts.show', [
             'post' => $comment->post_id
         ]);
-
     }
 
     public function destroy(Post $post, Comment $comment)

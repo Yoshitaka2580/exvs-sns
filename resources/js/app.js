@@ -5,12 +5,10 @@ import PostTagsInput from './components/PostTagsInput'
 import FollowButton from './components/FollowButton'
 
 const app = new Vue({
-  el: '#app',
-  components: {
-    PostLike,
-    PostTagsInput,
-    FollowButton,
-  }
+    el: '#app',
+    components: {
+        PostLike,
+        PostTagsInput,
+        FollowButton,
+    }
 })
-
-

@@ -23,4 +23,3 @@
   <label>プロフィール画像</label>
   <input type="file" name="thumbnail">
 </div>
-

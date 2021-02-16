@@ -25,8 +25,8 @@ class Post extends Model
         1 => ['label' => '受付中', 'class' => 'bg-success'],
         2 => ['label' => '終了',  'class' => 'bg-danger'],
     ];
-    
-    public function user(): BelongsTo 
+
+    public function user(): BelongsTo
     {
         return $this->belongsTo('App\User');
     }
@@ -38,7 +38,7 @@ class Post extends Model
     {
         return $this->belongsToMany('App\User', 'likes')->withTimestamps();
     }
-    
+
     /**
      * ユーザーモデルを渡して、そのユーザーがいいね済みかどうかを判定
      */
@@ -46,9 +46,9 @@ class Post extends Model
     {
         return $user
             ? (bool)$this->likes->where('id', $user->id)->count()
-            :false;
+            : false;
     }
-    
+
     /**
      * 現在のいいね数を算出する
      */
@@ -61,7 +61,7 @@ class Post extends Model
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
-    
+
     // 一つの投稿は複数のコメントを持つ
     public function comments(): HasMany
     {

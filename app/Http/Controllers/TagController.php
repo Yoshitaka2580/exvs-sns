@@ -11,11 +11,11 @@ class TagController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function show(string $name)
     {
         $tag = Tag::where('name', $name)->first();
-        
+
         return view('tags.show', compact('tag'));
     }
 }
