@@ -64,6 +64,7 @@ class PostController extends Controller
         $post->user_id = $request->user()->id;
         $post->save();
 
+        // post_tagテーブルにへレコードの保存
         $request->tags->each(function ($tagName) use ($post) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);
             $post->tags()->attach($tag);
