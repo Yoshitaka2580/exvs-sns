@@ -21,7 +21,10 @@ class PostRequest extends FormRequest
      *
      * @return array
      */
-    // バリデーションルール
+    /**
+     * バリデーションルール
+     * tags＝１，半角スペースがない 2、/を含ませない
+     */
     public function rules()
     {
         return [
@@ -31,7 +34,9 @@ class PostRequest extends FormRequest
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
         ];
     }
-    // バリデーションエラーメッセージの項目名
+    /**
+     *  バリデーションエラーメッセージの項目名
+     */
     public function attributes()
     {
         return [
@@ -42,7 +47,9 @@ class PostRequest extends FormRequest
         ];
     }
 
-    //フォームリクエストのバリデーションが成功した後に自動的に呼ばれるメソッド
+    /**
+     * フォームリクエストのバリデーションが成功した後に自動的に呼ぶ
+     */
     public function passedValidation()
     {
         $this->tags = collect(json_decode($this->tags))

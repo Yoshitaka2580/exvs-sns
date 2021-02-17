@@ -62,19 +62,25 @@ class Post extends Model
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
 
-    // 一つの投稿は複数のコメントを持つ
+    /**
+     * 一つの投稿は複数のコメントを持つ
+     */
     public function comments(): HasMany
     {
         return $this->hasMany('App\Comment');
     }
 
-    //投稿は一つのカテゴリーに属する
+    /*
+    * 投稿は一つのカテゴリーに属する
+    */
     public function category(): BelongsTo
     {
         return $this->belongsTo('App\Category');
     }
 
-    // ローカルスコープ カテゴリーidがあるかチェック
+    /*
+    * ローカルスコープ カテゴリーidがあるかチェック
+    */
     public function scopeCategoryAt($query, $category_id)
     {
         if (empty($category_id)) {
