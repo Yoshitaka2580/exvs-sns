@@ -12,10 +12,12 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string|null
      */
-    //未ログイン時のリダイレクト先
+    /**
+     * 未ログイン時のリダイレクト先
+     **/
     protected function redirectTo($request)
     {
-        if (! $request->expectsJson()) {
+        if (!$request->expectsJson()) {
             return route('home');
         }
     }
