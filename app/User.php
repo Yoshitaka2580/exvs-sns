@@ -51,6 +51,9 @@ class User extends Authenticatable
         return $this->belongsToMany('App\User', 'follows', 'followee_id', 'follower_id')->withTimestamps();
     }
 
+    /**
+     * フォロー中・フォローするユーザーモデルにアクセス
+     */
     public function followings(): BelongsToMany
     {
         return $this->belongsToMany('App\User', 'follows', 'follower_id', 'followee_id')->withTimestamps();
@@ -61,13 +64,19 @@ class User extends Authenticatable
         return $user
             ? (bool) $this->followers->where('id', $user->id)->count()
             : false;
-    } 
+    }
 
+    /**
+     * ユーザーモデルの全フォロワー数を返す
+     */
     public function getCountFollowersAttribute(): int
     {
         return $this->followers->count();
     }
-    
+
+    /**
+     * ユーザーモデルのフォロー数を返す
+     */
     public function getCountFollowingsAttribute(): int
     {
         return $this->followings->count();
