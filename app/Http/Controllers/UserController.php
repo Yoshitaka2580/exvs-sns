@@ -13,11 +13,11 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function show(string $name)
     {
         $user = User::where('name', $name)->first()
-                ->load(['posts.user', 'posts.likes', 'posts.tags', 'posts.comments', 'posts.category']);
+            ->load(['posts.user', 'posts.likes', 'posts.tags', 'posts.comments', 'posts.category']);
 
         $posts = $user->posts->sortByDesc('created_at');
 
@@ -47,7 +47,7 @@ class UserController extends Controller
                 $thumbnailname = Storage::disk('s3')->url($path);
             }
             $param = [
-                'thumbnail'=> $thumbnailname,
+                'thumbnail' => $thumbnailname,
                 'body' => $request->body,
             ];
         } else {
@@ -56,44 +56,15 @@ class UserController extends Controller
             ];
         }
 
-        User::where('id',$request->user_id)->update($param);
+        User::where('id', $request->user_id)->update($param);
 
         return redirect(route('users.show', compact('name')));
-    }
-
-    public function follow(Request $request, string $name)
-    {
-        $user = User::where('name', $name)->first();
-
-        if ($user->id === $request->user()->id)
-        {
-            return abort('404');
-        }
-
-        $request->user()->followings()->detach($user);
-        $request->user()->followings()->attach($user);
-
-        return ['name' => $name];
-    }
-    
-    public function unfollow(Request $request, string $name)
-    {
-        $user = User::where('name', $name)->first();
-
-        if ($user->id === $request->user()->id)
-        {
-            return abort('404');
-        }
-
-        $request->user()->followings()->detach($user);
-
-        return ['name' => $name];
     }
 
     public function likes(string $name)
     {
         $user = User::where('name', $name)->first()
-                ->load(['likes.user', 'likes.likes', 'likes.tags', 'likes.category', 'likes.comments']);
+            ->load(['likes.user', 'likes.likes', 'likes.tags', 'likes.category', 'likes.comments']);
         $posts = $user->likes->sortByDesc('created_at');
 
         return view('users.likes', [
@@ -105,7 +76,7 @@ class UserController extends Controller
     public function followings(string $name)
     {
         $user = User::where('name', $name)->first()
-                ->load('followings.followers');
+            ->load('followings.followers');
 
         $followings = $user->followings->sortByDesc('created_at');
 
@@ -114,11 +85,11 @@ class UserController extends Controller
             'followings' => $followings,
         ]);
     }
-    
+
     public function followers(string $name)
     {
         $user = User::where('name', $name)->first()
-                ->load('followers.followers');
+            ->load('followers.followers');
 
         $followers = $user->followers->sortByDesc('created_at');
 
@@ -128,5 +99,35 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * $nameはフォローされる側のモデル
+     */
+    public function follow(Request $request, string $name)
+    {
+        $user = User::where('name', $name)->first();
 
+        //HTTPの例外を投げる
+        if ($user->id === $request->user()->id) {
+            return abort('404');
+        }
+
+        $request->user()->followings()->detach($user);
+        $request->user()->followings()->attach($user);
+
+        //どのユーザーをフォローしたかJSON形式で変換
+        return ['name' => $name];
+    }
+
+    public function unfollow(Request $request, string $name)
+    {
+        $user = User::where('name', $name)->first();
+
+        if ($user->id === $request->user()->id) {
+            return abort('404');
+        }
+
+        $request->user()->followings()->detach($user);
+
+        return ['name' => $name];
+    }
 }
