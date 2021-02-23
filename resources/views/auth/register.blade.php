@@ -43,9 +43,10 @@
         <div class="mt-4">
           <a href="{{ route('login.{provider}', ['provider' => 'facebook']) }}" class="social-item btn-primary"><i class="fab fa-facebook-f"></i></a>
           <a href="{{ route('login.{provider}', ['provider' => 'google']) }} " class="social-item btn-danger ml-2"><i class="fab fa-google"></i></a>
-        </div> 
-      </div>        
+        </div>
+      </div>
     </div>
   </div>
 </div>
+@include('footer')
 @endsection

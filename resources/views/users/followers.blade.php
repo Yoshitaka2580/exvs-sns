@@ -18,4 +18,5 @@
     @endempty
   </div>
 </div>
+@include('footer')
 @endsection
