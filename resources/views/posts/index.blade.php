@@ -49,4 +49,5 @@
     {{ $posts->appends(['category_id' => $category_id])->links() }}
   </div>
 </div>
+@include('footer')
 @endsection
