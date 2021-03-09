@@ -29,7 +29,7 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ secure_asset('img/favicon.ico.jpg') }}">
   @endif
-  
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -42,6 +42,8 @@
   <link href="{{ asset('css/base.css') }}" rel="stylesheet">
   <!-- Style CSS -->
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  {{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
   @endif
 
   @if (app('env') === 'production')

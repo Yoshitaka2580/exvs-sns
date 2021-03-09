@@ -1,0 +1,79 @@
+.matchingPage .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #fd5068;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.matchingPage .header_logo {
+  position: absolute;
+  left: 30px;
+}
+
+.matchingPage .header_logo > a {
+  width: 40px;
+  display: block;
+}
+
+.matchingPage .header_logo > a > img {
+  width: 100%;
+}
+
+.matchingPage .matchingNum {
+  text-align: center;
+  font-size: 12px;
+  color: #fd5068;
+  margin-bottom: 20px;
+}
+
+.matchingPage .pageTitle {
+  font-size: 20px;
+  text-align: center;
+}
+
+.matchingPage .matchingList {
+  margin-top: 30px;
+  padding: 0;
+}
+
+.matchingPage .matchingList .matchingPerson {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+
+.matchingPage .matchingList .matchingPerson_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.matchingPage .matchingList .matchingPerson_img > img {
+  width: 100%;
+}
+
+.matchingPage .matchingList .matchingPerson form {
+  position: absolute;
+  right: 0;
+}
+
+.matchingPage .matchingList .matchingPerson form .chatForm_btn {
+  border: none;
+  padding: 10px;
+  background: #fd5068;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.matchingPage .matchingList .matchingPerson form .chatForm_btn:hover {
+  opacity: 0.7;
+}
+
