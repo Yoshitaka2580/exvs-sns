@@ -96,4 +96,18 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Comment');
     }
+
+    public function chatMessages(): HasMany
+    {
+        return $this->hasMany('App\ChatMessage');
+    }
+
+    /**
+     * マッチングしたチャットルーム
+     */
+
+    public function chatRoomUsers(): HasMany
+    {
+        return $this->hasMany('App\ChatRoomUsers');
+    }
 }
