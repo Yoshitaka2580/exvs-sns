@@ -22,12 +22,12 @@ class MatchingController extends Controller
 
         $matching_users = User::whereIn('id', $matching_id)->get();
 
-        $matching_users_count = count($matching_users);
+        $match_users_count = count($matching_users);
 
         return view('users.chatRoom', [
             'user' => $user,
             'matching_users' => $matching_users,
-            'matching_users_count' => $matching_users_count,
+            'match_users_count' => $match_users_count,
         ]);
     }
 }
