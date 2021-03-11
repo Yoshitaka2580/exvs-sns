@@ -115,15 +115,10 @@ class PostController extends Controller
 
     public function searchTag(Request $request)
     {
-        $search = $request->get('search');
-        $tag = Tag::where('name', $search)->first();
+        $search = $request->search;
+        $tags = Tag::where('name', 'like', "$search%")->get();
 
-        if ($tag === null) {
-            return redirect('/posts')
-                ->with('flash_message', '検索に該当するタグは登録されていません');
-        }
-
-        return view('tags.show', compact('tag'));
+        return view('tags.search', compact('tags', 'search'));
     }
 
     public function like(Request $request, Post $post)
