@@ -6,6 +6,7 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\User;
 use Storage;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -27,9 +28,9 @@ class UserController extends Controller
         ]);
     }
 
-    public function edit(string $name)
+    public function edit()
     {
-        $user = User::where('name', $name)->first();
+        $user = User::where('id', Auth::id())->first();
 
         return view('users.edit', compact('user'));
     }
