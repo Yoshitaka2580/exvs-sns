@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class MatchingController extends Controller
 {
@@ -12,14 +13,13 @@ class MatchingController extends Controller
         $this->middleware('auth');
     }
 
-    public static function index(string $name)
+    public static function index()
     {
-        $user = User::where('name', $name)->first();
+        $user = User::where('id', Auth::id())->first();
 
         $followers = $user->followers->pluck('id');
         $followings = $user->followings->pluck('id');
-        $matching_id = User::whereIn('id', $followers)->where('id', $followings)->pluck('id');
-
+        $matching_id = User::whereIn('id', $followers)->whereIn('id', $followings)->pluck('id');
         $matching_users = User::whereIn('id', $matching_id)->get();
 
         $match_users_count = count($matching_users);
