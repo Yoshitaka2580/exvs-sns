@@ -1,0 +1,205 @@
+.matchingPage .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #fd5068;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.matchingPage .header_logo {
+  position: absolute;
+  left: 30px;
+}
+
+.matchingPage .header_logo > a {
+  width: 40px;
+  display: block;
+}
+
+.matchingPage .header_logo > a > img {
+  width: 100%;
+}
+
+.matchingPage .matchingNum {
+  text-align: center;
+  font-size: 12px;
+  color: #fd5068;
+  margin-bottom: 20px;
+}
+
+.matchingPage .pageTitle {
+  font-size: 20px;
+  text-align: center;
+}
+
+.matchingPage .matchingList {
+  margin-top: 30px;
+  padding: 0;
+}
+
+.matchingPage .matchingList .matchingPerson {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+
+.matchingPage .matchingList .matchingPerson_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.matchingPage .matchingList .matchingPerson_img > img {
+  width: 100%;
+}
+
+.matchingPage .matchingList .matchingPerson form {
+  position: absolute;
+  right: 0;
+}
+
+.matchingPage .matchingList .matchingPerson form .chatForm_btn {
+  border: none;
+  padding: 10px;
+  background: #fd5068;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.matchingPage .matchingList .matchingPerson form .chatForm_btn:hover {
+  opacity: 0.7;
+}
+
+.chatPage input[type=text]:focus {
+  outline: 0;
+}
+
+.chatPage .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.chatPage .header .linkToMatching {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 40px;
+  border: 5px solid;
+  border-radius: 4px;
+  border-color: transparent transparent #fd5068 #fd5068;
+  transform: rotate(45deg);
+}
+
+.chatPage .header .chatPartner_name {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.chatPage .header .chatPartner_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.chatPage .header .chatPartner_img > img {
+  width: 100%;
+}
+
+.chatPage .messagesArea {
+  overflow: scroll;
+  height: 72vh;
+}
+
+.chatPage .messagesArea .message.selfMessage {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.chatPage .messagesArea .message.selfMessage .commonMessage {
+  margin: 1.5em 15px 1.5em 0;
+  padding: 7px 10px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.chatPage .messagesArea .message.selfMessage .commonMessage:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-left: 10px solid #e0edff;
+}
+
+.chatPage .messagesArea .message .commonMessage {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  border-radius: 7px;
+  background: #f1f1f1;
+}
+
+.chatPage .messagesArea .message .commonMessage > p {
+  margin: 0;
+}
+
+.chatPage .messagesArea .message .commonMessage:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-right: 10px solid #f1f1f1;
+}
+
+.chatPage .messagesArea .message .commonMessage.selfMessage {
+  margin: 1.5em 15px 1.5em 0;
+  padding: 7px 10px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.chatPage .messagesArea .message .commonMessage.selfMessage:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-left: 10px solid #e0edff;
+}
+
+.chatPage .messageInputForm {
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #e8e8e8;
+  padding: 30px 0;
+  width: 100%;
+}
+
+.chatPage .messageInputForm_input {
+  width: 100%;
+  border: none;
+}
+

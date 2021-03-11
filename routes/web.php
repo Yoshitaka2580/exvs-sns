@@ -46,7 +46,13 @@ Route::prefix('/users')->name('users.')->group(function () {
     Route::get('/{name}/followers', 'UserController@followers')->name('followers');
     Route::put('/{name}/follow', 'UserController@follow')->name('follow');
     Route::delete('/{name}/follow', 'UserController@unfollow')->name('unfollow');
+    Route::get('/{name}/matching', 'MatchingController@index')->name('matching');
 });
 
 Route::post('/posts/{post}/comment', 'CommentController@store')->name('comment.store');
 Route::delete('/posts/{post}/{comment}', 'CommentController@destroy')->name('comment.destroy');
+
+Route::group(['prefix' => 'chat', 'middleware' => 'auth'], function () {
+    Route::post('show', 'ChatController@show')->name('chat.show');
+    Route::post('chat', 'ChatController@chat')->name('chat.chat');
+});
