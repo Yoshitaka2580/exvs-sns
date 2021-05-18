@@ -109,6 +109,4 @@ PlayStation4ソフト「機動戦士ガンダム マキシブーストON」の�
 
 ## 作者
 
-[Twitter](https://twitter.com/yossy2580)
-
 **メールアドレス :** yoshitakanakashima0528@gmail.com
